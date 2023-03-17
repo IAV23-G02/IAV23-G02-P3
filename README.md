@@ -49,16 +49,14 @@ stateDiagram
 ``` 
 ## Pruebas y métricas
 
-- A 
-- B.1 
-- B.2 
-- B.3 
-- B.4 
-- C.1 
-- C.2 
-- C.3 
-- D   
-- E.1
+- A El jugdor se mueve con el ratón e interactúa con el click derecho
+- B.1 Cada mitad del público huye cuando cae su foco
+- B.2 El público vuelve tras reestablecer su foco
+- C.1 La cantante cambia entre Bambalinas y escenario cada poco tiempo
+- C.2 La cantante es llevada por el fantasma cuando choca con este y con el jugador si está perdida
+- C.3 La cantante merodea cuando está perdida 
+- D   Árbol de comportamiento complejo del Fantasma
+- E   Mejora sensorial con memoria del Fantasma
 
 ### Ampliaciones
 - Amp.1 
