@@ -21,12 +21,16 @@ public class PublicoCondition : Conditional
 
     public override void OnAwake()
     {
-        // IMPLEMENTAR 
+        blackboard = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>();
+        publicoWest = blackboard.westLever.GetComponent<ControlPalanca>().caido;
+        publicoEast = blackboard.eastLever.GetComponent<ControlPalanca>().caido;
     }
 
     public override TaskStatus OnUpdate()
     {
-        // IMPLEMENTAR
-        return TaskStatus.Success;
+        if(publicoEast && publicoWest)
+            return TaskStatus.Success;
+        else
+            return TaskStatus.Failure;
     }
 }
