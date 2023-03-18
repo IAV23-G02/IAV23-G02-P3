@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         if (anim.GetBool("Attack"))
             anim.SetBool("Attack", false);
         //realiza la accion "usar" (para arreglas luces y tocar piano)
-        if (Input.GetKeyDown(KeyCode.E) && ultimaAccion <=0)
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(1))&& ultimaAccion <=0)
         {
             ultimaAccion = tiempoEsperaAccion;
             areaAccion.SetActive(true);

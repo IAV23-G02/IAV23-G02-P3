@@ -33,7 +33,7 @@ public class MoveToClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetButton("Fire1") || Input.GetButton("Fire2")) && Camera.main.enabled)
+        if (Input.GetButton("Fire1") && Camera.main.enabled)
         {
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane));
             RaycastHit hit;
