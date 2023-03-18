@@ -56,10 +56,58 @@ Veamos el contenido de la carpeta **Fantasma**:
 
 - **VizcondeChocaCondition**: Si el fantasma choca con el Vizconde mientras lleva a la cantante, el fantasma tendrá que dejarla caer. Por implementar.
 
+### Cantante
 
-### Comportamientos
+Aparte del fantasma, hay scripts sueltos de gran utilidad. Veamos el script **Cantante**:
 
+```mermaid
+classDiagram
+    class Cantante{
+    	+ public double tiempoDeCanto
+	+ public double tiempoDeDescanso
+	+ public bool capturada = false
+	+ public double tiempoDeMerodeo
+	+ public bool cantando = false
+	+ public float aceleracionMax
+	+ public Transform Escenario
+	+ public Transform Bambalinas
+	+ public GameBlackboard bb;
+	+ public bool Cantar()
+	+ public bool TerminarCantar()
+	+ public void Descansar()
+	+ public bool TerminaDescansar()
+	+ public void SigueVizconde()
+    }
+```
 
+Además de esos métodos, Cantante tiene métodos para seguir al fantasma, merodear y recordar estancias en las que ha estado y desde donde puede recordar como volver al Backstage.
+
+### La pizarra
+La pizarra es un elemento de información común habitualmente usado en las máquinas de estado y árboles de comportamiento para obetener información del escenario. Esta pizarra puede ser modificada por cualquier agente susceptible de modificar el escnario de juego. 
+
+En nuestro caso, el script toma el nombre de **GameBlackboard**. Si observamos en el resto de scripts, el consultar la pizarra es un acto recurrente, pero el modificala, no se hace directamente en ella, si no guarda referencias de los objetos que podríamos necesitar. 
+
+```mermaid
+classDiagram
+    class GameBlackboard{
+    	+ public GameObject musicRoom
+	+ public GameObject celda
+	+ public GameObject stage
+	+ public GameObject tiempoDeMerodeo
+	+ public GameObject basement
+	+ public GameObject backStage
+	+ public GameObject singer
+	+ public GameObject player
+	+ public GameObject westLever
+	+ public GameObject eastLever
+	+ public GameObject piano
+	+ public GameObject puerta
+	+ public bool imprisoned = false;
+	+ public GameObject nearestLevel()
+	+ public GameObject getRandomSitio()
+    }
+```
+Como podemos ver la mayoría de datos que guarda la pizarra son los propios objetos de juego. Tambíen guarda alguna variable que no enacaja realmente con el comportamiento de ningún objeto, por lo que es interesante guardar la información aquí, como si está aprisionada la cantante.
 
 ## Diseño de la solución
 
