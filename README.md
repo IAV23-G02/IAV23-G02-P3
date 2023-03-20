@@ -110,6 +110,27 @@ classDiagram
 Como podemos ver la mayoría de datos que guarda la pizarra son los propios objetos de juego. Tambíen guarda alguna variable que no enacaja realmente con el comportamiento de ningún objeto, por lo que es interesante guardar la información aquí, como si está aprisionada la cantante.
 
 ## Diseño de la solución
+Para empezar, podemos plantear las máquinas de estado y los árboles de comportamiento que siguen nuestros agentes. Empecemos viendo a la cantante y los posibles estados en los que se puede encontrar
+
+```mermaid
+stateDiagram-v2
+	[*] --> Cantando
+	Cantando --> Backstage
+	Backstage --> Cantando
+	Cantando --> SigueFantasma : Rapto
+	Backstage --> SigueFantasma : Rapto
+	SigueFantasma --> Merodeo : Cae al suelo
+	Merodeo --> SigueFantasma : Rapto
+	Merodeo --> SigueJugador : Rescate
+	SigueJugador --> Merodeo : ChoqueFantasma
+	SigueJugador --> Cantando
+
+```
+
+Para la implementación del Fantasma, vamos a usar un Behaviour Tree. Para ello, podemos seguir los scripts que vienen dados para el fantasma:
+Veámoslo por partes para entender mejor cada tramo de razonamiento del fantasma. ¿Qué sucede cuando quiere raptar a la cantante?
+
+![FantasmaBT drawio](https://user-images.githubusercontent.com/82326243/226384886-9610f904-d74a-497b-83f5-ee6b8b98660b.png)
 
 
 ### Ciclo de Juego
