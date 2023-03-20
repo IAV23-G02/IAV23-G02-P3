@@ -132,6 +132,19 @@ Veámoslo por partes para entender mejor cada tramo de razonamiento del fantasma
 
 ![FantasmaBT drawio](https://user-images.githubusercontent.com/82326243/226384886-9610f904-d74a-497b-83f5-ee6b8b98660b.png)
 
+De este modo el fantasma es capaz de activar solo uno de los focos o raptar a la princesa directamente si no hay público. Además, si no está cantando, el fantasma evitará comprobar el escenario, yendo al Backstage a por la princesa. Además, hay que considerar la opción de buscar por todas las habitaciones por si estuviese por ahí perdida.
+
+Veamos que ocurre cuando el fantasma ya ha capturado a la princesa:
+
+![FantasmaRapto drawio](https://user-images.githubusercontent.com/82326243/226469121-4c2913fe-a67e-4b68-9f3d-6fb09c499076.png)
+
+La complejidad de este tramo está en decidir el camino más apropiado en función de como estaban colocadas las barcas y el Vizconde la última vez que fueron vistas por el fantasma.
+
+Veamos que ocurre una vez el fantasma logra encerrar a la princesa y se vuelve a la habitación. Este también es el estado inicial del fantasma, ya que comenzará en la sala de música:
+
+![FantasmaTocando drawio](https://user-images.githubusercontent.com/82326243/226472516-6113836b-ffaa-477f-932d-551128e309ec.png)
+
+Este Nodo paralelo plantea una interrupción, es decir, el fantasma estará tocando hasta que escuche a la cantante de nuevo en el escenario. Sería interesante introducir las interrupciones de cara a dejar de realizar cualquier acción cuando escucha que aporrean su piano
 
 ### Ciclo de Juego
 
