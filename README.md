@@ -21,6 +21,19 @@ Tras la segunda corrección, se han hecho los siguientes cambios:
 La propuesta de esta práctica surge de este [enlace](https://narratech.com/es/inteligencia-artificial-para-videojuegos/decision/historias-de-fantasmas/).
 La práctica consiste en desarrollar la IA del fantasma de la ópera, implementando la navegación y las decisiones del fantasma a través de los elementos del escenario, usando **árboles de comportamiento** y **máquinas de estado** 
 
+El resultado final que se espera es un juego cuyo objetivo es mantener a la cantante a salvo del fantasma. Tanto el fantasma, como la cantante y el público estarán controlados por inteligencia artificial, poniéndo el foco principal en el fantasma, del cual se espera que sea un agente inteligente, reactivo al entorno y capaz de tomar decisiones interpretando lo que ve y escucha.
+
+El fantasma tendrá como objetivo capturar a la cantante y llevarla a su prisión, para después ponerse a tocar el piano. Sin embargo, no puede realizar el secuestro si hay público presenciando la actuación de la cantante, por lo que deberá derribar los focos del escenario, sembrando el pánico y causando que el público huya. Una vez no haya testigos, podrá capturar a la cantante y llevarla a su prisión. Para capturarla, primero debe buscarla. Comienza buscándola en el escenario, y si no estuviera ahí, comprueba el backstage. Si siguiera sin encontrarla, la busca por las diferentes habitaciones hasta dar con ella, o escucharla cantar de nuevo, entonces sabrá que está en el escenario.
+
+En cuanto a la cantante, se dedica a cantar en el escenario, descansando en el backstage de vez en cuando. Si el fantasma la alcanza, la secuestra y la comienza a guiar hasta la cárcel.
+
+Como jugador, tienes varios recursos para pararle los pies al fantasma. En primer lugar, puedes arreglar los focos que previamente ha roto, permitiéndo al público volver a observar la actuación. También puedes tirarlos, pero sería contraproducente para tu objetivo.
+Además, puedes ir hasta el piano del fantasma y aporrearlo, causando que éste deje todo lo que está haciendo y vaya hacia él para arreglarlo. Finalmente, si interceptas al fantasma mientras tiene secuestrada a la cantante (o si aporreas su piano), la suelta, y ahora la cantante pasará a estar perdida en un estado de merodeo entre las habitaciones. Se quedará así hasta que encuentre de nuevo el escenario.
+
+Si encuentras a la cantante mientras está perdida, ésta comenzará a seguirte, y deberás guiarla hasta el escenario. Una vez ha llegado al escenario, conocerá la ruta que le has enseñado, por lo que, si vuelve a perderse en algún punto de ésta, sabrá volver sola.
+
+También hay en el escenario unas barcas que permiten desplazarse entre habitaciones.
+
 ## Punto de partida
 La consideración del punto de partida es importante en esta práctica ya que la mayoría de comportamientos que necesitamos para la implementación del árbol de comportamiento y de las máquinas de estado ya vienen dados. Dentro de la carpeta **Scripts** se encuentran scripts para el control del escenario y de los **Agentes**, como el jugador. Además, hay otra subcarpeta llamada **Fantasma** con varios comportamientos del fantasma programados.
 
@@ -169,12 +182,11 @@ También nos hemos aprovechado de los conditional aborts para que, en cuanto ten
 - E   Mejora sensorial con memoria del Fantasma
 
 ### Ampliaciones
-- Amp.1 : La cantante recuerda cómo volver desde cierto punto hasta el escenario cuando consigue volver a él.
+- Amp.1 : La cantante recuerda cómo volver desde cierto punto hasta el escenario.
 
 - Amp.2 : Cuando la cantante está siendo rescatada, y llega a un punto del mapa desde el que recuerde cómo llegar al escenario, deja de seguir al jugador y vuelve sola.
 
-- Amp.3 
-
+- Amp.3 : El fantasma tiene memoria de dónde vio a la cantante por última vez durante unos segundos.
 
 ## Producción
 La producción y la distribución de tareas se realiza sobre este esquema:
