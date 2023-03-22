@@ -11,10 +11,10 @@ Podrán verse las pruebas realizadas para la práctica en un vídeo de YouTube d
 
 ## Correcciones de la documentación
 Tras la primera corrección, se han añadido los siguientes apartados a la documentación:
-- 
+
 
 Tras la segunda corrección, se han hecho los siguientes cambios:
-- 
+
 
 ## Propuesta
 
@@ -33,6 +33,8 @@ Además, puedes ir hasta el piano del fantasma y aporrearlo, causando que éste 
 Si encuentras a la cantante mientras está perdida, ésta comenzará a seguirte, y deberás guiarla hasta el escenario. Una vez ha llegado al escenario, conocerá la ruta que le has enseñado, por lo que, si vuelve a perderse en algún punto de ésta, sabrá volver sola.
 
 También hay en el escenario unas barcas que permiten desplazarse entre habitaciones.
+
+También queremos dotar al fantasma de memoria, recordando las posiciones del jugador, la cantante y las barcas, reaccionando en consecuencia y dando mayor sensación de inteligencia al jugador.
 
 ## Punto de partida
 La consideración del punto de partida es importante en esta práctica ya que la mayoría de comportamientos que necesitamos para la implementación del árbol de comportamiento y de las máquinas de estado ya vienen dados. Dentro de la carpeta **Scripts** se encuentran scripts para el control del escenario y de los **Agentes**, como el jugador. Además, hay otra subcarpeta llamada **Fantasma** con varios comportamientos del fantasma programados.
@@ -123,6 +125,15 @@ Como podemos ver la mayoría de datos que guarda la pizarra son los propios obje
 ## Diseño de la solución
 Para empezar, podemos plantear las máquinas de estado y los árboles de comportamiento que siguen nuestros agentes. 
 
+El comportamiento del público es el más sencillo, tiene dos estados, el de estar en la butaca y el de estar en la sala cuando se tira el foco de su lado.
+
+```mermaid
+stateDiagram-v2
+	[*] --> Butaca
+	Butaca --> Huir : Foco caído
+	Huir --> Butaca : Foco arreglado
+```
+
 En cuanto a la cantante, estos serán los posibles estados en los que se puede encontrar:
 
 ```mermaid
@@ -139,6 +150,8 @@ stateDiagram-v2
 	SigueJugador --> Cantando
 
 ```
+
+La mayoría de cambios de estado de la cantante vienen dados por agentes externos, ya sea el fantasma o el Vizconde.
 
 Para la implementación del Fantasma, vamos a usar un Behaviour Tree. Para ello, podemos seguir los scripts que vienen dados para el fantasma:
 Veámoslo por partes para entender mejor cada tramo de razonamiento del fantasma. ¿Qué sucede cuando quiere raptar a la cantante?
