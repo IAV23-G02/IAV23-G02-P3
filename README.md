@@ -7,16 +7,14 @@
 - Miguel González Pérez:  https://github.com/miggon23
 
 ## Banco de pruebas de la práctica
-Pueden verse las pruebas realizadas para la práctica en el siguiente vídeo de YouTube:
-https://youtu.be/pq4ZS73I9BI
+Podrán verse las pruebas realizadas para la práctica en un vídeo de YouTube de cara a la entrega final.
 
 ## Correcciones de la documentación
 Tras la primera corrección, se han añadido los siguientes apartados a la documentación:
-- Pseudocódigo para el suavizado del camino.
-- Arreglada la indentación en el apartado de la solución.
+- 
 
 Tras la segunda corrección, se han hecho los siguientes cambios:
-- Movidos todos los scripts modificados a la carpeta G02.
+- 
 
 ## Propuesta
 
@@ -32,11 +30,11 @@ Veamos el contenido de la carpeta **Fantasma**:
 
 - **CantanteCondition**: Clase que hereda de Conditional, que a su vez hereda de Task. Contiene un método OnUpdate() que comprueba si la cantante está cantando, y si es así, devuelve Success. Por lo visto hasta ahora Task podría ser una clase que permita conocer si una tarea va bien o mal de cara a un árbol de comportamiento.
 
-- **CapturadaCondition**: Parecido al anterior pero falta por implementar. Condicion de si la cantante esta encarcelada.
+- **CapturadaCondition**: Parecido al anterior pero falta por implementar. En este caso devolverá si la cantante se encuentra capturada o no.
 
 - **GhostArreglaPianoAction**: Llama a pianoControl.ArreglaPiano() si el piano está roto. Este script tomará importancia de cara a interrumpir la acción que esté llevando el fantasma ya que deberá dejar lo que esté haciendo en ese momento. Hereda de action.
 
-- **GhostChaseAction**: Hereda de Action. Accion de seguir a la cantante, cuando la alcanza devuelve Success. Por implementar
+- **GhostChaseAction**: Hereda de Action. Accion de seguir a la cantante, cuando la alcanza devuelve Success. Por implementar.
 
 - **GhostCloseDoorAction**: Accion de cerrar la puerta de la celda, yendo hacia la palanca, cuando la alcanza devuelve Success. Ya viene implementado.
 
@@ -50,7 +48,7 @@ Veamos el contenido de la carpeta **Fantasma**:
 
 - **ImprisonedCondition**: Conditional. Devuelve Success si la cantante está en chirona. Failure en otro caso.
 
-- **PianoCondition**: Conditional. No está implementado ni hay descripción, pero seguramente comprube el estado del piano a la hora de tener que arreglarlo.
+- **PianoCondition**: Conditional. No está implementado ni hay descripción, pero comprobará el estado del piano a la hora de tener que arreglarlo, es decir, si está roto o no.
 
 - **PublicoCondition**: Conditional. Por implementar. El fantasma tendrá que comprobar en este script que no hay nadie en el público para poder realizar sus planes (devolviendo Task.Success).
 
@@ -83,9 +81,9 @@ classDiagram
 Además de esos métodos, Cantante tiene métodos para seguir al fantasma, merodear y recordar estancias en las que ha estado y desde donde puede recordar como volver al Backstage.
 
 ### La pizarra
-La pizarra es un elemento de información común habitualmente usado en las máquinas de estado y árboles de comportamiento para obetener información del escenario. Esta pizarra puede ser modificada por cualquier agente susceptible de modificar el escnario de juego. 
+La pizarra es un elemento de información común habitualmente usado en las máquinas de estado y árboles de comportamiento para obtener información del escenario. Esta pizarra puede ser modificada por cualquier agente susceptible de modificar el escnario de juego. 
 
-En nuestro caso, el script toma el nombre de **GameBlackboard**. Si observamos en el resto de scripts, el consultar la pizarra es un acto recurrente, pero el modificala, no se hace directamente en ella, si no guarda referencias de los objetos que podríamos necesitar. 
+En nuestro caso, el script toma el nombre de **GameBlackboard**. Si observamos en el resto de scripts, el consultar la pizarra es un acto recurrente, pero el modificarla, no se hace directamente en ella, si no guardando referencias de los objetos que podríamos necesitar. 
 
 ```mermaid
 classDiagram
@@ -107,10 +105,12 @@ classDiagram
 	+ public GameObject getRandomSitio()
     }
 ```
-Como podemos ver la mayoría de datos que guarda la pizarra son los propios objetos de juego. Tambíen guarda alguna variable que no enacaja realmente con el comportamiento de ningún objeto, por lo que es interesante guardar la información aquí, como si está aprisionada la cantante.
+Como podemos ver la mayoría de datos que guarda la pizarra son los propios objetos de juego. Tambíen guarda alguna variable que no enacaja realmente con el comportamiento de ningún objeto, por lo que es interesante guardar cierta información aquí, como si está aprisionada o no la cantante.
 
 ## Diseño de la solución
-Para empezar, podemos plantear las máquinas de estado y los árboles de comportamiento que siguen nuestros agentes. Empecemos viendo a la cantante y los posibles estados en los que se puede encontrar
+Para empezar, podemos plantear las máquinas de estado y los árboles de comportamiento que siguen nuestros agentes. 
+
+En cuanto a la cantante, estos serán los posibles estados en los que se puede encontrar:
 
 ```mermaid
 stateDiagram-v2
@@ -132,41 +132,33 @@ Veámoslo por partes para entender mejor cada tramo de razonamiento del fantasma
 
 ![FantasmaBT drawio](https://user-images.githubusercontent.com/82326243/226384886-9610f904-d74a-497b-83f5-ee6b8b98660b.png)
 
-De este modo el fantasma es capaz de activar solo uno de los focos o raptar a la princesa directamente si no hay público. Además, si no está cantando, el fantasma evitará comprobar el escenario, yendo al Backstage a por la princesa. Además, hay que considerar la opción de buscar por todas las habitaciones por si estuviese por ahí perdida.
+De este modo el fantasma es capaz de activar solo uno de los focos o raptar a la cantante directamente si no hay público. Además, si no está cantando, el fantasma evitará comprobar el escenario, yendo al Backstage a por la cantante. Hay que considerar también la opción de buscar por todas las habitaciones por si estuviese por ahí perdida.
 
-Veamos que ocurre cuando el fantasma ya ha capturado a la princesa:
+Veamos que ocurre cuando el fantasma ya ha capturado a la cantante:
 
 ![FantasmaRapto drawio](https://user-images.githubusercontent.com/82326243/226469121-4c2913fe-a67e-4b68-9f3d-6fb09c499076.png)
 
-La complejidad de este tramo está en decidir el camino más apropiado en función de como estaban colocadas las barcas y el Vizconde la última vez que fueron vistas por el fantasma.
+La complejidad de este tramo está en decidir el camino más apropiado en función de como estaban colocadas las barcas y el Vizconde la última vez que fueron vistos por el fantasma.
 
-Veamos que ocurre una vez el fantasma logra encerrar a la princesa y se vuelve a la habitación. Este también es el estado inicial del fantasma, ya que comenzará en la sala de música:
+Veamos que ocurre una vez el fantasma logra encerrar a la cantante y se vuelve a la habitación. Este también es el estado inicial del fantasma, ya que comenzará en la sala de música:
 
 ![FantasmaTocando drawio](https://user-images.githubusercontent.com/82326243/226472516-6113836b-ffaa-477f-932d-551128e309ec.png)
 
 Este Nodo paralelo plantea una interrupción, es decir, el fantasma estará tocando hasta que escuche a la cantante de nuevo en el escenario. Sería interesante introducir las interrupciones de cara a dejar de realizar cualquier acción cuando escucha que aporrean su piano. Para esto vamos a introducir los conditional aborts y vamos a ver como quedaría todo el BT del fantasma una vez combinado todo. Para ello vamos a meter arreglar el piano como tarea de gran prioridad, pudiendo interrumpir cualquier acción concurrente del fantasma:
 
-
 ![FantasmaBTRefactorizado drawio](https://user-images.githubusercontent.com/82326243/227001659-036315ac-8a96-4813-afed-7cdd20708ed0.png)
 
+Hemos refactorizado la parte de buscar a la cantante para capturarla. Ahora, si intenta capturar a la cantante y no lo consigue porque no se encuentra ni en el escenario ni en el Backstage, la buscará por todas las habitaciones hasta que la encuentre o la escuche cantar desde el escenario. También sale a por la cantante si la oye cantar o si (en su mente) sabe que no está encerrada (ya sea porque la llevaba consigo y se ha perdido o por acciones del Vizconde).
 
-Hemos refactorizado la partede buscar a la cantante para capturarla. Ahora, si intenta capturar a la cantante y no lo consigue porque no se encuentra ni en el escenario ni en el Backstage, la buscará por todas las habitaciones hasta que la encuentre o la escuche cantar desde el escenario. También sale a por la cantante si la oye cantar o si (en su mente) sabe que no está encerrada (ya sea porque la llevaba consigo y se ha perdido o por acciones del Vizconde).
+También se ha añadido a la búsqueda de la cantante por parte del fantasma, un nodo secuencia que intenta buscar a la cantante por donde se encontraba si es que fue vista por él hace menos de 15 segundos. Esto nos permitirá que el fantasma busque a la cantante en la zona donde se perdiere cuando choque contra el jugador, en lugar de ir directamente al escenario a buscarla. En caso de no conseguirlo, el nodo selector al que está unido esta secuencia, tratará de llevar a cabo la búsqueda habitual de la cantante. Toda esta rama está conectada a un ConditionalAbort de tipo Lower Priority que interrumpirá a los hermanos de la izquierda en cuanto la cantante se ponga a cantar o deje de estar secuestrada (a conocimiento del fantasma), por ejemplo, cuando el Vizconde choca contra él.
 
-### Ciclo de Juego
+Al introducir los ConditionalAborts ya no es necesario tener un nodo de paralelismo (el de la triple flecha) ya que se abortará la acción de tocar el piano en cuanto empiece a cantar la cantante, por lo que moverse a la sala de música y empezar a tocar el piano lo hemos dejado como tarea menos prioritaria.
 
-Ciclo de juego:
-En el menú se podrá escoger número de minotauros y tamaño del tablero a elección del jugador.
-```mermaid
-stateDiagram
-    [*] --> Menú
-    Menú --> Juego
-    Juego --> Reinicio[R]
-    Reinicio[R] --> Juego
-    Juego --> Menú
-``` 
+También nos hemos aprovechado de los conditional aborts para que, en cuanto tenga a la cantante consigo, la lleve a la prisión, ya que estábamos teniendo problemas a la hora de plantear dónde había que situar esta acción. De este modo, cuando el fantasma se haga con la cantate, se abortará la tarea que esté haciendo en ese momento para llevarla a la prisión.
+
 ## Pruebas y métricas
 
-- A El jugdor se mueve con el ratón e interactúa con el click derecho
+- A   El jugdor se mueve con el ratón e interactúa con el click derecho
 - B.1 Cada mitad del público huye cuando cae su foco
 - B.2 El público vuelve tras reestablecer su foco
 - C.1 La cantante cambia entre Bambalinas y escenario cada poco tiempo
