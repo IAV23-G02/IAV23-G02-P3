@@ -144,7 +144,12 @@ Veamos que ocurre una vez el fantasma logra encerrar a la princesa y se vuelve a
 
 ![FantasmaTocando drawio](https://user-images.githubusercontent.com/82326243/226472516-6113836b-ffaa-477f-932d-551128e309ec.png)
 
-Este Nodo paralelo plantea una interrupción, es decir, el fantasma estará tocando hasta que escuche a la cantante de nuevo en el escenario. Sería interesante introducir las interrupciones de cara a dejar de realizar cualquier acción cuando escucha que aporrean su piano
+Este Nodo paralelo plantea una interrupción, es decir, el fantasma estará tocando hasta que escuche a la cantante de nuevo en el escenario. Sería interesante introducir las interrupciones de cara a dejar de realizar cualquier acción cuando escucha que aporrean su piano. Para esto vamos a introducir los conditional aborts y vamos a ver como quedaría todo el BT del fantasma una vez combinado todo. Para ello vamos a meter arreglar el piano como tarea de gran prioridad, pudiendo interrumpir cualquier acción concurrente del fantasma:
+
+
+
+
+Hemos refactorizado la partede buscar a la cantante para capturarla. Ahora, si intenta capturar a la cantante y no lo consigue porque no se encuentra ni en el escenario ni en el Backstage, la buscará por todas las habitaciones hasta que la encuentre o la escuche cantar desde el escenario. También sale a por la cantante si la oye cantar o si (en su mente) sabe que no está encerrada (ya sea porque la llevaba consigo y se ha perdido o por acciones del Vizconde).
 
 ### Ciclo de Juego
 
