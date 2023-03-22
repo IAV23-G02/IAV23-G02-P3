@@ -30,7 +30,7 @@ Veamos el contenido de la carpeta **Fantasma**:
 
 - **CantanteCondition**: Clase que hereda de Conditional, que a su vez hereda de Task. Contiene un método OnUpdate() que comprueba si la cantante está cantando, y si es así, devuelve Success. Por lo visto hasta ahora Task podría ser una clase que permita conocer si una tarea va bien o mal de cara a un árbol de comportamiento.
 
-- **CapturadaCondition**: Parecido al anterior pero falta por implementar. En este caso devolverá si la cantante se encuentra capturada o no.
+- **CapturadaCondition**: Parecido al anterior pero falta por implementar. En este caso devolverá si la cantante se encuentra capturada o no. Con capturada se quiere decir cuando está siendo retenida por el fantasma, no cuando está encarcelada.
 
 - **GhostArreglaPianoAction**: Llama a pianoControl.ArreglaPiano() si el piano está roto. Este script tomará importancia de cara a interrumpir la acción que esté llevando el fantasma ya que deberá dejar lo que esté haciendo en ese momento. Hereda de action.
 
@@ -46,7 +46,7 @@ Veamos el contenido de la carpeta **Fantasma**:
 
 - **GhostSearchStageAction**: Accion de ir al escenario, cuando llega devuelve Success. Por implementar.
 
-- **ImprisonedCondition**: Conditional. Devuelve Success si la cantante está en chirona. Failure en otro caso.
+- **ImprisonedCondition**: Conditional. Devuelve Success si la cantante está encarcelada. Failure en otro caso.
 
 - **PianoCondition**: Conditional. No está implementado ni hay descripción, pero comprobará el estado del piano a la hora de tener que arreglarlo, es decir, si está roto o no.
 
@@ -158,25 +158,50 @@ También nos hemos aprovechado de los conditional aborts para que, en cuanto ten
 
 ## Pruebas y métricas
 
-- A   El jugdor se mueve con el ratón e interactúa con el click derecho
+- A   El jugador se mueve con el ratón e interactúa con el click derecho
 - B.1 Cada mitad del público huye cuando cae su foco
 - B.2 El público vuelve tras reestablecer su foco
 - C.1 La cantante cambia entre Bambalinas y escenario cada poco tiempo
-- C.2 La cantante es llevada por el fantasma cuando choca con este y con el jugador si está perdida
-- C.3 La cantante merodea cuando está perdida 
-- D   Árbol de comportamiento complejo del Fantasma
+- C.2 La cantante es llevada por el fantasma cuando chocan
+- C.3 La cantante es llevada por el jugador si está perdida y chocan
+- C.4 La cantante merodea cuando está perdida
+- D   Árbol de comportamiento complejo del Fantasma (ver desglosado en la sección 'Producción')
 - E   Mejora sensorial con memoria del Fantasma
 
 ### Ampliaciones
-- Amp.1 
+- Amp.1 : La cantante recuerda cómo volver desde cierto punto hasta el escenario cuando consigue volver a él.
 
-- Amp.2 
+- Amp.2 : Cuando la cantante está siendo rescatada, y llega a un punto del mapa desde el que recuerde cómo llegar al escenario, deja de seguir al jugador y vuelve sola.
 
 - Amp.3 
 
 
 ## Producción
+La producción y la distribución de tareas se realiza sobre este esquema:
 
+| Estado  |  Tarea  |  Estudiante  |  Progreso  |
+|:-:|:--|:-:|:-:|
+| ✔ | Redactar documentación | Elisa y Miguel | 90% |
+| ✔ | Crear diagramas de estado y BT | Miguel | 100% |
+|  | Redactar alcance de la práctica | Elisa | 0% |
+| ✔ | A: Interacción del jugador con click derecho | Miguel | 100% |
+|  | B: Cada mitad del público huye cuando cae su foco |  | 0% |
+|  | B: El público vuelve tras reestablecer su foco |  | 0% |
+|  | C: La cantante cambia entre Bambalinas y escenario cada poco tiempo |  | 0% |
+|  | C: La cantante es llevada por el fantasma cuando chocan |  | 0% |
+|  | C: La cantante es llevada por el jugador si está perdida y chocan |  | 0% |
+|  | C: La cantante merodea cuando está perdida  |  | 0% |
+|  | C: La cantante vuelve al estado inicial cuando el jugador la salva y la lleva al escenario  |  | 0% |
+|  | D: El fantasma tira los focos cuando hay público  |  | 0% |
+|  | D: El fantasma busca a la cantante en las diferentes ubicaciones con prioridad  |  | 0% |
+|  | D: El fantasma captura a la cantante cuando chocan |  | 0% |
+|  | D: El fantasma lleva a la cantante hasta la prisión |  | 0% |
+|  | D: El fantasma lleva a la cantante hasta la prisión con el camino más corto |  | 0% |
+|  | D: El fantasma toca el piano cuando aprisiona a la cantante |  | 0% |
+|  | D: El fantasma escucha a la cantante y vuelve a buscarla |  | 0% |
+|  | D: El fantasma deja lo que está haciendo cuando oye su piano para arreglarlo |  | 0% |
+|  | E: El fantasma recuerda si vió a la cantante en los últimos X segundos |  | 0% |
+|  | E: El fantasma analiza qué mitad del público falta para evitar acciones innecesarias |  | 0% |
 
 ## Referencias
 
@@ -187,7 +212,5 @@ Los recursos de terceros utilizados son de uso público.
 		- PathfindDijkstra (pág 209, 210, 211)
 		- Implementaciones de A* pag (215 - 228)
 		- Suavizado (pág 253, 254, 255, 256, 257)
-- [Kaykit Medieval Builder Pack](https://kaylousberg.itch.io/kaykit-medieval-builder-pack)
-- [Kaykit Dungeon](https://kaylousberg.itch.io/kaykit-dungeon)
-- [Kaykit Animations](https://kaylousberg.itch.io/kaykit-animations)
 - Game Maker's Toolkit: [¿Qué hace una buena IA?](https://www.youtube.com/watch?v=9bbhJi0NBkk)
+- Uso de [esta plataforma](https://app.diagrams.net/) para la realización de esquemas.
