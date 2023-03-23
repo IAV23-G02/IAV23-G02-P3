@@ -12993,14 +12993,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487720363}
-  m_LocalRotation: {x: 0.0016440791, y: -0.006135909, z: -0.25881416, w: 0.96590626}
+  m_LocalRotation: {x: 0.0019253822, y: -0.006053535, z: -0.21398088, w: 0.9768172}
   m_LocalPosition: {x: -3.346, y: 0.483, z: -1.68}
   m_LocalScale: {x: 0.2, y: 1, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1796623514}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -0.72800004, z: -30.000002}
+  m_LocalEulerAnglesHint: {x: 0.067, y: -0.725, z: -24.712}
 --- !u!64 &1487720365
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17179,6 +17179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalancaDX
       objectReference: {fileID: 0}
+    - target: {fileID: 3148725723348299440, guid: 2d40d536fdfba6e41ae33c91e49f52b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Palanca
+      objectReference: {fileID: 0}
     - target: {fileID: 3786157626859481274, guid: 2d40d536fdfba6e41ae33c91e49f52b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -17234,6 +17239,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5068864048366852431, guid: 2d40d536fdfba6e41ae33c91e49f52b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Foco
+      objectReference: {fileID: 0}
     - target: {fileID: 6008992156213532912, guid: 2d40d536fdfba6e41ae33c91e49f52b1,
         type: 3}
       propertyPath: caido
@@ -17262,7 +17272,7 @@ PrefabInstance:
     - target: {fileID: 7157131555843633555, guid: 2d40d536fdfba6e41ae33c91e49f52b1,
         type: 3}
       propertyPath: m_TagString
-      value: Foco
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d40d536fdfba6e41ae33c91e49f52b1, type: 3}

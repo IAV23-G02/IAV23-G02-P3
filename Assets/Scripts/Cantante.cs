@@ -75,19 +75,22 @@ public class Cantante : MonoBehaviour
     public bool TerminaCantar()
     {
         // IMPLEMENTAR
+        nuevoObjetivo(Bambalinas.gameObject);
+        cantando = false;
         return true;
     }
 
     // Comienza a descansar, reseteando el temporizador
     public void Descansar()
     {
-        // IMPLEMENTAR
+   
     }
 
     // Comprueba si tiene que dejar de descansar
     public bool TerminaDescansar()
     {
         // IMPLEMENTAR
+        nuevoObjetivo(Escenario.gameObject);
         return true;
     }
 
@@ -148,6 +151,6 @@ public class Cantante : MonoBehaviour
 
     private void nuevoObjetivo(GameObject obj)
     {
-        // IMPLEMENTAR
+        agente.SetDestination(obj.transform.position);
     }
 }

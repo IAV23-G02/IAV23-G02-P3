@@ -10,7 +10,7 @@ using UnityEngine.AI;
 public class Publico : MonoBehaviour
 {
     //int lucesEncendidas = 2;
-    bool miLuzEncendida;
+    bool miLuzEncendida = true;
     bool sentado = true;
 
     bool escondido = false;
@@ -63,5 +63,20 @@ public class Publico : MonoBehaviour
         // lucesEncendidas++;
         //sentado = lucesEncendidas == 2;
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    //Le cae el foco en la cabeza
+    //    if (collision.gameObject.tag == "Foco")
+    //    {
+    //        Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+    //        if(rb.velocity.y != 0)
+    //        {
+    //            //Dejamos inconsciente al jugador
+    //            gameObject.GetComponent<CapsuleCollider>().enabled = false;
+    //            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+    //        }
+    //    }
+    //}
 
 }

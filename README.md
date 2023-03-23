@@ -210,8 +210,8 @@ La producción y la distribución de tareas se realiza sobre este esquema:
 | ✔ | Crear diagramas de estado y BT | Miguel | 100% |
 |  | Redactar alcance de la práctica | Elisa | 0% |
 | ✔ | A: Interacción del jugador con click derecho | Miguel | 100% |
-|  | B: Cada mitad del público huye cuando cae su foco |  | 0% |
-|  | B: El público vuelve tras reestablecer su foco |  | 0% |
+| ✔ | B: Cada mitad del público huye cuando cae su foco | Elisa | 100% |
+| ✔ | B: El público vuelve tras reestablecer su foco | Miguel | 100% |
 |  | C: La cantante cambia entre Bambalinas y escenario cada poco tiempo |  | 0% |
 |  | C: La cantante es llevada por el fantasma cuando chocan |  | 0% |
 |  | C: La cantante es llevada por el jugador si está perdida y chocan |  | 0% |
