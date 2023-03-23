@@ -25,11 +25,14 @@ public class GhostReturnAction : Action
     public override void OnAwake()
     {
         // IMPLEMENTAR
+        musicRoom= GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().musicRoom;
+        agent = GetComponent<NavMeshAgent>();
     }
 
     public override TaskStatus OnUpdate()
     {
         // IMPLEMENTAR
+        agent.SetDestination(musicRoom.transform.position);
         return TaskStatus.Success;
     }
 }
