@@ -34,7 +34,7 @@ public class PublicoCondition : Conditional
         publicoEast = palancaEast.caido;
         publicoWest = palancaWest.caido;
 
-        if(publicoEast || publicoWest)
+        if(!(publicoEast && publicoWest))
             return TaskStatus.Success;
         else
             return TaskStatus.Failure;
