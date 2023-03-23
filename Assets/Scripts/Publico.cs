@@ -13,16 +13,23 @@ public class Publico : MonoBehaviour
     bool miLuzEncendida;
     bool sentado = true;
 
+    bool escondido = false;
+
     GameObject luzAsociada;
+    [SerializeField] GameObject escondite;
+    [SerializeField] GameObject butaca;
+    
     private void Start()
     {
         //lucesEncendidas = 2;
         sentado = true;
+
+        GetComponent<NavMeshAgent>().SetDestination(butaca.transform.position);
     }
 
     public void LateUpdate()
     {
-        //para que rote hacia donde se mueve
+        // para que rote hacia donde se mueve
         if (GetComponent<NavMeshAgent>().velocity.sqrMagnitude > Mathf.Epsilon)
         {
             transform.rotation = Quaternion.LookRotation(GetComponent<NavMeshAgent>().velocity.normalized);
@@ -40,6 +47,9 @@ public class Publico : MonoBehaviour
     {
         miLuzEncendida = false;
         sentado = false;
+
+        GetComponent<NavMeshAgent>().SetDestination(escondite.transform.position);
+
         //lucesEncendidas--;
         //sentado = lucesEncendidas == 2;
     }
@@ -48,6 +58,8 @@ public class Publico : MonoBehaviour
     {
         miLuzEncendida = true;
         sentado = true;
+
+        GetComponent<NavMeshAgent>().SetDestination(butaca.transform.position);
         // lucesEncendidas++;
         //sentado = lucesEncendidas == 2;
     }

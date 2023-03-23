@@ -10,6 +10,7 @@ TagManager:
   - Palanca
   - Puerta
   - Cantante
+  - Foco
   layers:
   - Default
   - TransparentFX

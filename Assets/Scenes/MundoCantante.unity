@@ -2757,6 +2757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bc9511581510e4cb6c120ffaa7e95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escondite: {fileID: 1109291994}
+  butaca: {fileID: 1957017323}
 --- !u!136 &258457289
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3890,6 +3892,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bc9511581510e4cb6c120ffaa7e95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escondite: {fileID: 29804945}
+  butaca: {fileID: 1341835723}
 --- !u!136 &406756856
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5144,6 +5148,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7157131555843633555, guid: 2d40d536fdfba6e41ae33c91e49f52b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Foco
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d40d536fdfba6e41ae33c91e49f52b1, type: 3}
 --- !u!1 &553852558
@@ -5393,6 +5402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bc9511581510e4cb6c120ffaa7e95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escondite: {fileID: 637593796}
+  butaca: {fileID: 1184022916}
 --- !u!136 &565968664
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6442,6 +6453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bc9511581510e4cb6c120ffaa7e95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escondite: {fileID: 489659621}
+  butaca: {fileID: 1322167764}
 --- !u!136 &697826483
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7418,6 +7431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bc9511581510e4cb6c120ffaa7e95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escondite: {fileID: 386149}
+  butaca: {fileID: 1833399399}
 --- !u!136 &825326284
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8122,6 +8137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bc9511581510e4cb6c120ffaa7e95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escondite: {fileID: 6276498}
+  butaca: {fileID: 379702782}
 --- !u!136 &976104761
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11466,6 +11483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bc9511581510e4cb6c120ffaa7e95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escondite: {fileID: 2047312471}
+  butaca: {fileID: 625845619}
 --- !u!136 &1293266432
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15958,6 +15977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bc9511581510e4cb6c120ffaa7e95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escondite: {fileID: 1812221560}
+  butaca: {fileID: 75854005}
 --- !u!136 &2009794729
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17237,6 +17258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157131555843633555, guid: 2d40d536fdfba6e41ae33c91e49f52b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Foco
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d40d536fdfba6e41ae33c91e49f52b1, type: 3}
