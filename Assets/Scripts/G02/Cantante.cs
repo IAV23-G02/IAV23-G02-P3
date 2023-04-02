@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -129,13 +130,12 @@ public class Cantante : MonoBehaviour
     }
     public bool GetCapturada()
     {
-        // IMPLEMENTAR
-        return true;
+        return capturada;
     }
 
     public void setCapturada(bool cap)
     {
-        // IMPLEMENTAR
+        capturada= cap;
     }
 
     public GameObject sigueFantasma()
@@ -153,4 +153,5 @@ public class Cantante : MonoBehaviour
     {
         agente.SetDestination(obj.transform.position);
     }
+
 }
