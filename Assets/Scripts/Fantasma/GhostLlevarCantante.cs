@@ -31,22 +31,21 @@ public class GhostLlevarCantante : Action
 
         sotanoNorte = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().basement;
         singer = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().singer;
-        singerNav = singer.GetComponent<NavMeshAgent>();        
+        singerNav = singer.GetComponent<NavMeshAgent>(); 
     }
 
     public override TaskStatus OnUpdate()
     {
-        agent.SetDestination(singer.transform.position);
+        agent.SetDestination(sotanoNorte.transform.position);
 
-        if (Vector3.SqrMagnitude(transform.position - singer.transform.position) < 1.2f)
+        if (Vector3.SqrMagnitude(transform.position - sotanoNorte.transform.position) < 1.2f)
         {
             agent.SetDestination(transform.position);
-            singer.GetComponent<Cantante>().capturada = true;
+            GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().imprisoned = true;
 
             //return TaskStatus.Success;
-            singerNav.enabled = false;
-            singer.transform.position = transform.position + new Vector3(0, 1, 0);
-            singer.transform.SetParent(transform, true);
+            //singerNav.enabled = false;
+            //singer.transform.SetParent(null);
             //agent.SetDestination(sotanoNorte.transform.position);
 
             return TaskStatus.Success;
