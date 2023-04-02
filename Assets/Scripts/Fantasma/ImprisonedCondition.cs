@@ -27,7 +27,7 @@ public class ImprisonedCondition : Conditional
 
     public override TaskStatus OnUpdate()
     {
-        if (blackboard.imprisoned)
+        if (blackboard.puerta)
             return TaskStatus.Success;
 
         return TaskStatus.Failure;

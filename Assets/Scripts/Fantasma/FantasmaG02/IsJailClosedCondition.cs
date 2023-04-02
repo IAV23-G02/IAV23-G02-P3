@@ -1,18 +1,21 @@
+using BehaviorDesigner.Runtime.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Ghost : MonoBehaviour
+public class Ghost : Conditional
 {
-    // Start is called before the first frame update
-    void Start()
+    GameBlackboard blackboard;
+
+    public override void OnAwake()
     {
-        
+        blackboard = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override TaskStatus OnUpdate()
     {
-        
+        if (!blackboard.gate)
+            return TaskStatus.Success;
+        else
+            return TaskStatus.Failure;
     }
 }
