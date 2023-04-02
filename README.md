@@ -1,17 +1,16 @@
 # **IAV - Decisión**
 
-## Replica el formato de documentación habitual
-
 ## Autores
-- Elisa Todd Rodríguez:  https://github.com/elisatodd
-- Miguel González Pérez:  https://github.com/miggon23
+- [Elisa Todd Rodríguez](https://github.com/elisatodd)
+- [Miguel González Pérez](https://github.com/miggon23)
 
 ## Banco de pruebas de la práctica
 Podrán verse las pruebas realizadas para la práctica en un vídeo de YouTube de cara a la entrega final.
 
 ## Correcciones de la documentación
 Tras la primera corrección, se han añadido los siguientes apartados a la documentación:
-
+- Añadidos los enlaces a los nombres de los alumnos.
+- 
 
 Tras la segunda corrección, se han hecho los siguientes cambios:
 
@@ -233,9 +232,5 @@ La producción y la distribución de tareas se realiza sobre este esquema:
 Los recursos de terceros utilizados son de uso público.
 
 - *AI for Games*, Ian Millington.
-	- Chapter 4: Pathfinding
-		- PathfindDijkstra (pág 209, 210, 211)
-		- Implementaciones de A* pag (215 - 228)
-		- Suavizado (pág 253, 254, 255, 256, 257)
 - Game Maker's Toolkit: [¿Qué hace una buena IA?](https://www.youtube.com/watch?v=9bbhJi0NBkk)
 - Uso de [esta plataforma](https://app.diagrams.net/) para la realización de esquemas.
