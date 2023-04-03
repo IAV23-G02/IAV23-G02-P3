@@ -2,7 +2,12 @@ using BehaviorDesigner.Runtime.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Ghost : Conditional
+
+/*
+ * Condicion de si la puerta de la cárcel está cerrada
+ */
+
+public class IsJailClosedCondition : Conditional
 {
     GameBlackboard blackboard;
 
@@ -13,7 +18,7 @@ public class Ghost : Conditional
 
     public override TaskStatus OnUpdate()
     {
-        if (!blackboard.gate)
+        if (blackboard.gate)
             return TaskStatus.Success;
         else
             return TaskStatus.Failure;

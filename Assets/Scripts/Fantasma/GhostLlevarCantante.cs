@@ -41,7 +41,6 @@ public class GhostLlevarCantante : Action
         if (Vector3.SqrMagnitude(transform.position - sotanoNorte.transform.position) < 1.2f)
         {
             agent.SetDestination(transform.position);
-            GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().imprisoned = true;
 
             //return TaskStatus.Success;
             //singerNav.enabled = false;
