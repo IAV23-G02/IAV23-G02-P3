@@ -26,7 +26,7 @@ public class Cantante : MonoBehaviour
     public Transform objetivo;
 
     // Segundos que puede estar merodeando
-    public double tiempoDeMerodeo;
+    public double tiempoDeMerodeo = 7;
     // Segundo en el que comezo a merodear
     public double tiempoComienzoMerodeo = 0;
     // Distancia de merodeo
@@ -55,6 +55,11 @@ public class Cantante : MonoBehaviour
     public void Start()
     {
         agente.updateRotation = false;
+    }
+
+    private void Update()
+    {
+        tiempoComienzoMerodeo+= Time.deltaTime;
     }
 
     public void LateUpdate()
@@ -119,15 +124,27 @@ public class Cantante : MonoBehaviour
     // Genera una posicion aleatoria a cierta distancia dentro de las areas permitidas
     private Vector3 RandomNavSphere(float distance) 
     {
-        // IMPLEMENTAR
-        return new Vector3();
+        
+        Vector2 merRadius = Random.insideUnitCircle.normalized;
+        merRadius *= distance;
+        return transform.position + new Vector3(merRadius.x, transform.position.y, merRadius.y);
     }
 
     // Genera un nuevo punto de merodeo cada vez que agota su tiempo de merodeo actual
     public void IntentaMerodear()
     {
-        // IMPLEMENTAR
+        if(tiempoComienzoMerodeo > tiempoDeMerodeo)
+        {
+            float distance = Random.Range(0, (float)distanciaDeMerodeo);
+            agente.SetDestination(RandomNavSphere(distance));
+            ResetMerodeoTimer();
+        }
     }
+    public void ResetMerodeoTimer()
+    {
+        tiempoComienzoMerodeo = 0;
+    }
+
     public bool GetCapturada()
     {
         return capturada;

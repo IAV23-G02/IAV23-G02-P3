@@ -17129,9 +17129,9 @@ MonoBehaviour:
   anguloVistaHorizontal: 0
   distanciaVista: 0
   objetivo: {fileID: 0}
-  tiempoDeMerodeo: 0
+  tiempoDeMerodeo: 7
   tiempoComienzoMerodeo: 0
-  distanciaDeMerodeo: 16
+  distanciaDeMerodeo: 4
   cantando: 0
   Escenario: {fileID: 908012310}
   Bambalinas: {fileID: 553852559}
@@ -17181,8 +17181,9 @@ MonoBehaviour:
         Return Action","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(259.478851,121.984314)"},"ID":25,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GhostLlevarCantante","NodeData":{"Offset":"(-185.387833,153.8415)"},"ID":26,"Name":"Ghost
         Llevar Cantante","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-10.3146858,149.109558)"},"ID":27,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsJailClosedCondition","NodeData":{"Offset":"(-105.658768,144.583252)"},"ID":28,"Name":"Is
         Jail Closed Condition","Instant":true},{"Type":"GhostCloseDoorAction","NodeData":{"Offset":"(141.980453,143.399567)"},"ID":29,"Name":"Ghost
-        Close Door Action","Instant":true}]}]}]}]}]}]},"DetachedTasks":[{"Type":"GhostCloseDoorAction","NodeData":{"Offset":"(-15.6282959,330.456848)"},"ID":30,"Name":"Ghost
-        Close Door Action","Instant":true}]}'
+        Close Door Action","Instant":true}]},{"Type":"ImprisonSingerAction","NodeData":{"Offset":"(154.516235,161.825745)"},"ID":30,"Name":"Imprison
+        Singer Action","Instant":true},{"Type":"GhostCloseDoorAction","NodeData":{"Offset":"(363.683716,155.263245)"},"ID":31,"Name":"Ghost
+        Close Door Action","Instant":true}]}]}]}]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

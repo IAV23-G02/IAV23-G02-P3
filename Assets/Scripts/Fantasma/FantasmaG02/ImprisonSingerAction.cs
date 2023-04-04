@@ -36,9 +36,12 @@ public class ImprisonSingerAction : Action
             GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().imprisoned = true;
             agent.SetDestination(transform.position);
 
-            singer.GetComponent<NavMeshAgent>().enabled = false;
+            singer.GetComponent<NavMeshAgent>().enabled = true;
             singer.GetComponent<Cantante>().capturada = false;
+            singer.GetComponent<NavMeshAgent>().Warp(singer.transform.position);
+            //singer.transform.position = transform.position;
             singer.transform.SetParent(null);
+
             return TaskStatus.Success;
         }
 
