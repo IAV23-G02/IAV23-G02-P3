@@ -136,7 +136,12 @@ public class Cantante : MonoBehaviour
         if(tiempoComienzoMerodeo > tiempoDeMerodeo)
         {
             float distance = Random.Range(0, (float)distanciaDeMerodeo);
-            agente.SetDestination(RandomNavSphere(distance));
+            bool merodeoExitoso = false;
+            //Número de intentos en el que busca un sitio al que merodear
+            for (int i = 0; i < 20 && !merodeoExitoso; i++)
+            {
+                merodeoExitoso = agente.SetDestination(RandomNavSphere(distance));
+            }
             ResetMerodeoTimer();
         }
     }

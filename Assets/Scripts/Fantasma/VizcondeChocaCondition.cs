@@ -12,9 +12,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine.AI;
+using Unity.VisualScripting;
 
 /*
- * Devuelve Success cuando la cantante es sobre el palco
+ * Devuelve Success cuando el fantasma choca con el Vizco
  */
 
 
@@ -29,14 +30,22 @@ public class VizcondeChocaCondition : Conditional
     public override void OnAwake()
     {
         // IMPLEMENTAR 
+        agent = GetComponent<NavMeshAgent>();
+        Vizconde = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().player;
 
     }
 
     public override TaskStatus OnUpdate()
     {
         // IMPLEMENTAR
-        return TaskStatus.Success;
-
+        //Para que solo cuente un golpeo:
+        if(!golpeado &&(Vizconde.transform.position - transform.position).magnitude < 1.2)
+        {
+            golpeado = true;
+            return TaskStatus.Success;
+        }
+        return TaskStatus.Failure;
     }
 
+    
 }
