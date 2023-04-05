@@ -211,12 +211,12 @@ La producción y la distribución de tareas se realiza sobre este esquema:
 | ✔ | A: Interacción del jugador con click derecho | Miguel | 100% |
 | ✔ | B: Cada mitad del público huye cuando cae su foco | Elisa | 100% |
 | ✔ | B: El público vuelve tras reestablecer su foco | Miguel | 100% |
-|  | C: La cantante cambia entre Bambalinas y escenario cada poco tiempo |  | 0% |
+| ✔ | C: La cantante cambia entre Bambalinas y escenario cada poco tiempo | Miguel | 100% |
 |  | C: La cantante es llevada por el fantasma cuando chocan |  | 0% |
 |  | C: La cantante es llevada por el jugador si está perdida y chocan |  | 0% |
-|  | C: La cantante merodea cuando está perdida  |  | 0% |
+| ✔ | C: La cantante merodea cuando está perdida  | Miguel | 100% |
 |  | C: La cantante vuelve al estado inicial cuando el jugador la salva y la lleva al escenario  |  | 0% |
-|  | D: El fantasma tira los focos cuando hay público  |  | 0% |
+| ✔ | D: El fantasma tira los focos cuando hay público  | Ambos | 100% |
 |  | D: El fantasma busca a la cantante en las diferentes ubicaciones con prioridad  |  | 0% |
 |  | D: El fantasma captura a la cantante cuando chocan |  | 0% |
 |  | D: El fantasma lleva a la cantante hasta la prisión |  | 0% |
