@@ -33,6 +33,17 @@ public class GhostReturnAction : Action
     {
         // IMPLEMENTAR
         agent.SetDestination(musicRoom.transform.position);
-        return TaskStatus.Success;
+        if (Vector3.SqrMagnitude(transform.position - musicRoom.transform.position) < 1.2f)
+        {
+            agent.SetDestination(transform.position);
+
+            //return TaskStatus.Success;
+            //singerNav.enabled = false;
+            //singer.transform.SetParent(null);
+            //agent.SetDestination(sotanoNorte.transform.position);
+
+            return TaskStatus.Success;
+        }
+        return TaskStatus.Running;
     }
 }

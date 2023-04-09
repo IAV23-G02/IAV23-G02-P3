@@ -13,21 +13,23 @@ using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 
 /*
- * Condicion de si la cantante esta encarcelada
+ * Condicion de si la cantante esta en captura actualmente
  */
 
 public class CapturadaCondition : Conditional
 {
-    //Cantante cantante;
+    Cantante cantante;
 
     public override void OnAwake()
     {
-        // IMPLEMENTAR
+        cantante = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().singer.GetComponent<Cantante>();
     }
 
     public override TaskStatus OnUpdate()
     {
-        // IMPLEMENTAR
-        return TaskStatus.Success;
+        if(cantante.GetCapturada())
+            return TaskStatus.Success;
+        else
+            return TaskStatus.Failure;
     }
 }

@@ -18,7 +18,7 @@ public class Accion : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Piano"))
         {
-            other.gameObject.GetComponent<ControlPiano>().InteractFantasma();
+            other.gameObject.GetComponent<ControlPiano>().InteractVizconde();
             Debug.Log("Han golpeado al piano");
         }
         else if (other.gameObject.CompareTag("Palanca"))

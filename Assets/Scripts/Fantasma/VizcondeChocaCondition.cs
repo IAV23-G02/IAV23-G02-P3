@@ -25,27 +25,27 @@ public class VizcondeChocaCondition : Conditional
     NavMeshAgent agent;
 
     CapsuleCollider cc;
-    bool golpeado = false;
+    bool golpeado;
 
     public override void OnAwake()
     {
         // IMPLEMENTAR 
         agent = GetComponent<NavMeshAgent>();
         Vizconde = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().player;
-
+        golpeado = false;
     }
 
     public override TaskStatus OnUpdate()
     {
         // IMPLEMENTAR
         //Para que solo cuente un golpeo:
-        if(!golpeado &&(Vizconde.transform.position - transform.position).magnitude < 1.2)
+        if((Vizconde.transform.position - transform.position).magnitude < 1.2)
         {
             golpeado = true;
             return TaskStatus.Success;
         }
+        golpeado = false;
         return TaskStatus.Failure;
     }
 
-    
 }

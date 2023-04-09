@@ -39,7 +39,7 @@ public class ControlPiano : MonoBehaviour
         {
             //tocado = false; // Solo lo hace el fantasma
             tocadoDaOtro = true;
-            InteractVizconde();
+            //InteractVizconde();
         } 
 
     }
