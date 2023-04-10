@@ -17129,9 +17129,9 @@ MonoBehaviour:
   anguloVistaHorizontal: 0
   distanciaVista: 0
   objetivo: {fileID: 0}
-  tiempoDeMerodeo: 6
+  tiempoDeMerodeo: 5
   tiempoComienzoMerodeo: 0
-  distanciaDeMerodeo: 8
+  distanciaDeMerodeo: 10
   cantando: 0
   Escenario: {fileID: 908012310}
   Bambalinas: {fileID: 553852559}

@@ -23,6 +23,7 @@ public class GhostDropSinger : Action
         // IMPLEMENTAR
         agent.SetDestination(transform.position);
 
+        singer.transform.SetParent(null);
         singer.GetComponent<NavMeshAgent>().enabled = true;
         singer.GetComponent<Cantante>().capturada = false;
         singer.GetComponent<NavMeshAgent>().Warp(singer.transform.position);
