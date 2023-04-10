@@ -17126,8 +17126,8 @@ MonoBehaviour:
   tiempoDeCanto: 0
   tiempoDeDescanso: 0
   capturada: 0
-  anguloVistaHorizontal: 0
-  distanciaVista: 0
+  anguloVistaHorizontal: 140
+  distanciaVista: 7.74
   objetivo: {fileID: 0}
   tiempoDeMerodeo: 5
   tiempoComienzoMerodeo: 0
@@ -17137,6 +17137,7 @@ MonoBehaviour:
   Bambalinas: {fileID: 553852559}
   bb: {fileID: 0}
   fantasma: {fileID: 0}
+  vizconde: {fileID: 1908876747}
 --- !u!114 &2536986899609911508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17297,7 +17298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &2854911446422225760
 PrefabInstance:
   m_ObjectHideFlags: 0

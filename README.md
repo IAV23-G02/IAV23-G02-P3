@@ -218,14 +218,14 @@ La producción y la distribución de tareas se realiza sobre este esquema:
 |  | C: La cantante vuelve al estado inicial cuando el jugador la salva y la lleva al escenario  |  | 0% |
 | ✔ | D: El fantasma tira los focos cuando hay público  | Ambos | 100% |
 |  | D: El fantasma busca a la cantante en las diferentes ubicaciones con prioridad  |  | 0% |
-| ✔ | D: El fantasma captura a la cantante cuando chocan | Miguel | 0% |
-| ✔ | D: El fantasma lleva a la cantante hasta la prisión | Ambos | 0% |
-| ✔ | D: El fantasma lleva a la cantante hasta la prisión con el camino más corto | Ambos | 0% |
-| ✔ | D: El fantasma toca el piano cuando aprisiona a la cantante | Eli | 0% |
-| ✔ | D: El fantasma escucha a la cantante y vuelve a buscarla | Eli | 0% |
-| ✔ | D: El fantasma deja lo que está haciendo cuando oye su piano para arreglarlo | Miguel | 0% |
+| ✔ | D: El fantasma captura a la cantante cuando chocan | Miguel | 100% |
+| ✔ | D: El fantasma lleva a la cantante hasta la prisión | Ambos | 100% |
+| ✔ | D: El fantasma lleva a la cantante hasta la prisión con el camino más corto | Ambos | 100% |
+| ✔ | D: El fantasma toca el piano cuando aprisiona a la cantante | Eli | 100% |
+| ✔ | D: El fantasma escucha a la cantante y vuelve a buscarla | Eli | 100% |
+| ✔ | D: El fantasma deja lo que está haciendo cuando oye su piano para arreglarlo | Miguel | 100% |
 |  | E: El fantasma recuerda si vió a la cantante en los últimos X segundos |  | 0% |
-| ✔ | E: El fantasma analiza qué mitad del público falta para evitar acciones innecesarias | Ambos | 0% |
+| ✔ | E: El fantasma analiza qué mitad del público falta para evitar acciones innecesarias | Ambos | 80% |
 
 ## Referencias
 
@@ -234,3 +234,4 @@ Los recursos de terceros utilizados son de uso público.
 - *AI for Games*, Ian Millington.
 - Game Maker's Toolkit: [¿Qué hace una buena IA?](https://www.youtube.com/watch?v=9bbhJi0NBkk)
 - Uso de [esta plataforma](https://app.diagrams.net/) para la realización de esquemas.
+- [Cómo detectar objetos a partir de un rango de visión](https://www.youtube.com/watch?v=lV47ED8h61k)

@@ -46,6 +46,10 @@ public class Cantante : MonoBehaviour
 
     //para seguir al fantasma o al vizconde
     public GameObject fantasma;
+    public GameObject vizconde;
+
+    //Variable de uso exclusivo para el Gizmos
+    bool jugadorVisto = false;
 
     public void Awake()
     {
@@ -60,6 +64,7 @@ public class Cantante : MonoBehaviour
     private void Update()
     {
         tiempoComienzoMerodeo+= Time.deltaTime;
+        Scan();
     }
 
     public void LateUpdate()
@@ -110,15 +115,52 @@ public class Cantante : MonoBehaviour
     // Comprueba si esta en un sitio desde el cual sabe llegar al escenario
     public bool ConozcoEsteSitio()
     {
+        
         // IMPLEMENTAR
         return true;
     }
+
+    
 
     //Mira si ve al vizconde con un angulo de vision y una distancia maxima
     public bool Scan()
     {
         // IMPLEMENTAR
-        return true;
+        Vector3 playerVector = vizconde.transform.position - transform.position;    
+        if(Vector3.Angle(playerVector.normalized, -transform.forward) < anguloVistaHorizontal * 0.5
+            && playerVector.magnitude < distanciaVista)
+        {
+            jugadorVisto = true;
+            return true;
+        }
+        else
+        {
+            jugadorVisto = false;
+            return false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        double halfVisionAngle = anguloVistaHorizontal * 0.5;
+
+        Vector3 p1, p2;
+
+        p1 = PointForAngle((float)halfVisionAngle, (float)distanciaVista, -90);
+        p2 = PointForAngle((float)-halfVisionAngle, (float)distanciaVista, -90);
+
+        Gizmos.color = jugadorVisto? Color.green : Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + p1);
+        Gizmos.DrawLine(transform.position, transform.position + p2);
+
+        Gizmos.DrawRay(transform.position, -transform.forward * 3f);
+    }
+
+    private Vector3 PointForAngle(float angle, float distance, float orientation)
+    {
+        return transform.TransformDirection( 
+            new Vector3(Mathf.Cos((angle + orientation) * Mathf.Deg2Rad), 0, Mathf.Sin((angle + orientation) * Mathf.Deg2Rad))
+            * distance );          
     }
 
     // Genera una posicion aleatoria a cierta distancia dentro de las areas permitidas
@@ -168,7 +210,7 @@ public class Cantante : MonoBehaviour
 
     public void sigueVizconde()
     {
-        // IMPLEMENTAR
+        agente.SetDestination(vizconde.transform.position);
     }
 
     private void nuevoObjetivo(GameObject obj)
