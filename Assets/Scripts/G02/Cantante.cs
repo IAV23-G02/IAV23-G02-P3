@@ -178,7 +178,7 @@ public class Cantante : MonoBehaviour
 
     public bool EstaEnEscenario()
     {
-        return (lugarActual == Escenario);
+        return (lugarActual == Escenario.gameObject);
     }
 
     //Mira si ve al vizconde con un angulo de vision y una distancia maxima
