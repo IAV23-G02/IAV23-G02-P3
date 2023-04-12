@@ -86,7 +86,6 @@ public class Cantante : MonoBehaviour
     // Guarda la referencia a la habitación en la que está
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Cantante entra en " + collision.gameObject.name);
         if (collision.gameObject.layer == LayerMask.NameToLayer("PointerLayer"))
         {
             Debug.Log("Cantante entra en " + collision.gameObject.name);
@@ -94,10 +93,6 @@ public class Cantante : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("fuengirols");
-    }
     // Comienza a cantar, reseteando el temporizador
     public void Cantar()
     {
