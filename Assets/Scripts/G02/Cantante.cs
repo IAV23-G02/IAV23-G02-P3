@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Linq;
 
 public class Cantante : MonoBehaviour
 {
@@ -55,9 +56,10 @@ public class Cantante : MonoBehaviour
     AudioSource audioSource;
 
     [SerializeField]
-    List<GameObject> lugaresConocidos;
-
-    GameObject lugarActual;
+    private List<GameObject> lugaresConocidos;
+    private List<GameObject> lugaresVisitados;
+    private GameObject lugarActual;
+    private bool enEscenario = true;
 
     public void Awake()
     {
@@ -67,6 +69,9 @@ public class Cantante : MonoBehaviour
     public void Start()
     {
         agente.updateRotation = false;
+
+        lugaresConocidos = new List<GameObject>();
+        lugaresVisitados = new List<GameObject>();
     }
 
     private void Update()
@@ -86,12 +91,14 @@ public class Cantante : MonoBehaviour
     // Guarda la referencia a la habitación en la que está
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("PointerLayer"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("PointerLayer")
+            && !lugaresVisitados.Contains(collision.gameObject) && !lugaresConocidos.Contains(collision.gameObject))
         {
             Debug.Log("Cantante entra en " + collision.gameObject.name);
             lugarActual = collision.gameObject;
+            lugaresVisitados.Add(lugarActual);
         }
-    }
+    }   
 
     // Comienza a cantar, reseteando el temporizador
     public void Cantar()
@@ -155,6 +162,9 @@ public class Cantante : MonoBehaviour
     public void IrAlEscenario()
     {
         agente.SetDestination(Escenario.transform.position);
+        List<GameObject> nuevosLugares = lugaresVisitados.Except(lugaresConocidos).ToList();
+        lugaresConocidos.AddRange(nuevosLugares);
+        lugaresVisitados.Clear();
     }
 
     //Mira si ve al vizconde con un angulo de vision y una distancia maxima
