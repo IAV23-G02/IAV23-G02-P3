@@ -51,6 +51,9 @@ public class Cantante : MonoBehaviour
     //Variable de uso exclusivo para el Gizmos
     bool jugadorVisto = false;
 
+    [SerializeField]
+    AudioSource audioSource;
+
     public void Awake()
     {
         agente = GetComponent<NavMeshAgent>();
@@ -64,7 +67,7 @@ public class Cantante : MonoBehaviour
     private void Update()
     {
         tiempoComienzoMerodeo+= Time.deltaTime;
-        Scan();
+        //Scan();
     }
 
     public void LateUpdate()
@@ -80,6 +83,7 @@ public class Cantante : MonoBehaviour
     {
         tiempoComienzoCanto = 0;
         cantando = true;
+        audioSource.Play();
     }
 
     // Comprueba si tiene que dejar de cantar
@@ -87,7 +91,7 @@ public class Cantante : MonoBehaviour
     {
         // IMPLEMENTAR
         nuevoObjetivo(Bambalinas.gameObject);
-        cantando = false;
+        DejarDeCantar();
         return true;
     }
 
@@ -95,6 +99,13 @@ public class Cantante : MonoBehaviour
     public void Descansar()
     {
    
+    }
+
+    //Deja de reproducir el audio asociado a la canción
+    public void DejarDeCantar()
+    {
+        cantando = false;
+        audioSource.Stop();
     }
 
     // Comprueba si tiene que dejar de descansar
@@ -127,7 +138,7 @@ public class Cantante : MonoBehaviour
     {
         // IMPLEMENTAR
         Vector3 playerVector = vizconde.transform.position - transform.position;    
-        if(Vector3.Angle(playerVector.normalized, -transform.forward) < anguloVistaHorizontal * 0.5
+        if(Vector3.Angle(playerVector.normalized, transform.forward) < anguloVistaHorizontal * 0.5
             && playerVector.magnitude < distanciaVista)
         {
             jugadorVisto = true;
@@ -146,14 +157,14 @@ public class Cantante : MonoBehaviour
 
         Vector3 p1, p2;
 
-        p1 = PointForAngle((float)halfVisionAngle, (float)distanciaVista, -90);
-        p2 = PointForAngle((float)-halfVisionAngle, (float)distanciaVista, -90);
+        p1 = PointForAngle((float)halfVisionAngle, (float)distanciaVista, 90);
+        p2 = PointForAngle((float)-halfVisionAngle, (float)distanciaVista, 90);
 
         Gizmos.color = jugadorVisto? Color.green : Color.red;
         Gizmos.DrawLine(transform.position, transform.position + p1);
         Gizmos.DrawLine(transform.position, transform.position + p2);
 
-        Gizmos.DrawRay(transform.position, -transform.forward * 3f);
+        Gizmos.DrawRay(transform.position, transform.forward * 3f);
     }
 
     private Vector3 PointForAngle(float angle, float distance, float orientation)
