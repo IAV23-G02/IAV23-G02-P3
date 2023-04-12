@@ -17063,7 +17063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373871681117018864}
   m_LocalRotation: {x: -0, y: -0.999979, z: -0, w: -0.006491213}
-  m_LocalPosition: {x: 0, y: 0.95, z: 0}
+  m_LocalPosition: {x: 0, y: 1.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17082,7 +17082,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.15
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &373871681117018880
@@ -17144,7 +17144,9 @@ MonoBehaviour:
   fantasma: {fileID: 0}
   vizconde: {fileID: 1908876747}
   audioSource: {fileID: 473146498}
-  lugaresConocidos: []
+  lugaresConocidos:
+  - {fileID: 908012309}
+  - {fileID: 0}
 --- !u!114 &2536986899609911508
 MonoBehaviour:
   m_ObjectHideFlags: 0

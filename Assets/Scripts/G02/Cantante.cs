@@ -152,6 +152,11 @@ public class Cantante : MonoBehaviour
         return ret;
     }
 
+    public void IrAlEscenario()
+    {
+        agente.SetDestination(Escenario.transform.position);
+    }
+
     //Mira si ve al vizconde con un angulo de vision y una distancia maxima
     public bool Scan()
     {
