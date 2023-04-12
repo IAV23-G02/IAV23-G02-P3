@@ -207,15 +207,15 @@ La producción y la distribución de tareas se realiza sobre este esquema:
 |:-:|:--|:-:|:-:|
 | ✔ | Redactar documentación | Elisa y Miguel | 90% |
 | ✔ | Crear diagramas de estado y BT | Miguel | 100% |
-|  | Redactar alcance de la práctica | Elisa | 0% |
+| ✔ | Redactar alcance de la práctica | Elisa | 100% |
 | ✔ | A: Interacción del jugador con click derecho | Miguel | 100% |
 | ✔ | B: Cada mitad del público huye cuando cae su foco | Elisa | 100% |
 | ✔ | B: El público vuelve tras reestablecer su foco | Miguel | 100% |
 | ✔ | C: La cantante cambia entre Bambalinas y escenario cada poco tiempo | Miguel | 100% |
-| ✔ | C: La cantante es llevada por el fantasma cuando chocan |  | 0% |
-|  | C: La cantante es llevada por el jugador si está perdida y chocan |  | 0% |
+| ✔ | C: La cantante es llevada por el fantasma cuando chocan | Miguel | 100% |
+| ✔ | C: La cantante es llevada por el jugador si está perdida y se ven | Elisa y Miguel | 100% |
 | ✔ | C: La cantante merodea cuando está perdida  | Miguel | 100% |
-|  | C: La cantante vuelve al estado inicial cuando el jugador la salva y la lleva al escenario  |  | 0% |
+| ✔ | C: La cantante vuelve al estado inicial cuando el jugador la salva y la lleva al escenario  | Elisa | 100% |
 | ✔ | D: El fantasma tira los focos cuando hay público  | Ambos | 100% |
 |  | D: El fantasma busca a la cantante en las diferentes ubicaciones con prioridad  |  | 0% |
 | ✔ | D: El fantasma captura a la cantante cuando chocan | Miguel | 100% |
@@ -225,7 +225,8 @@ La producción y la distribución de tareas se realiza sobre este esquema:
 | ✔ | D: El fantasma escucha a la cantante y vuelve a buscarla | Eli | 100% |
 | ✔ | D: El fantasma deja lo que está haciendo cuando oye su piano para arreglarlo | Miguel | 100% |
 |  | E: El fantasma recuerda si vió a la cantante en los últimos X segundos |  | 0% |
-| ✔ | E: El fantasma analiza qué mitad del público falta para evitar acciones innecesarias | Ambos | 80% |
+| ✔ | E: El fantasma analiza qué mitad del público falta para evitar acciones innecesarias | Ambos | 100% |
+| ✔ | Extra: La cantante sabe volver sola cuando el jugador la acompaña hasta una habitación que conoce | Elisa | 100% |
 
 ## Referencias
 
