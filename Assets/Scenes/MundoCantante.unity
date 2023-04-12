@@ -7613,7 +7613,7 @@ GameObject:
   - component: {fileID: 846730448}
   m_Layer: 0
   m_Name: FloorTrigger
-  m_TagString: Untagged
+  m_TagString: PiesCantante
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7644,8 +7644,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.68294054, y: 0.23365945, z: 1}
-  m_Center: {x: 0.10459561, y: -0.38316515, z: 1.69878e-12}
+  m_Size: {x: 0.2150524, y: 0.23365945, z: 0.25214368}
+  m_Center: {x: 0.06668721, y: -0.38315228, z: 0.039242357}
 --- !u!1 &853353978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2823811973980386637, guid: e95c078f033167b40a84cd6ea40a3006,
@@ -17353,7 +17353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &2854911446422225760
 PrefabInstance:
   m_ObjectHideFlags: 0

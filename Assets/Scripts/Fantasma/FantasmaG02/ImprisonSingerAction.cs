@@ -27,7 +27,7 @@ public class ImprisonSingerAction : Action
         if(!onMyWay)
         {
             agent.SetDestination(jailRoom.transform.position);
-            onMyWay= true;
+            onMyWay = true;
         }
 
         //Si llega a la habitación, deja a la cantante en el suelo
@@ -41,6 +41,8 @@ public class ImprisonSingerAction : Action
             singer.GetComponent<NavMeshAgent>().Warp(singer.transform.position);
             //singer.transform.position = transform.position;
             singer.transform.SetParent(null);
+
+            singer.GetComponent<Cantante>().SetLugarActual(blackboard.celda);
 
             return TaskStatus.Success;
         }

@@ -69,7 +69,7 @@ public class Cantante : MonoBehaviour
     public void Start()
     {
         agente.updateRotation = false;
-
+        blackBoard = FindObjectOfType<GameBlackboard>();
         lugaresVisitados = new List<GameObject>();
     }
 
@@ -90,12 +90,13 @@ public class Cantante : MonoBehaviour
     // Guarda la referencia a la habitación en la que está
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("PointerLayer")
-            && !lugaresVisitados.Contains(other.gameObject) && !lugaresConocidos.Contains(other.gameObject))
+        if (other.gameObject.layer == LayerMask.NameToLayer("PointerLayer"))
         {
             Debug.Log("Cantante entra en " + other.gameObject.name + " (trigger)");
             lugarActual = other.gameObject;
-            lugaresVisitados.Add(lugarActual);
+            if (!lugaresVisitados.Contains(other.gameObject) && !lugaresConocidos.Contains(other.gameObject)
+                && lugarActual != blackBoard.celda)
+                lugaresVisitados.Add(lugarActual);
         }
     }
 
@@ -140,13 +141,22 @@ public class Cantante : MonoBehaviour
     // Comprueba si se encuentra en la celda
     public bool EstaEnCelda()
     {
-        // IMPLEMENTAR
-        return true;
+        if (lugarActual == blackBoard.celda)
+            return true;
+        else return false;
+    }
+
+    public void SetLugarActual(GameObject nuevoLugar)
+    {
+        lugarActual = nuevoLugar;
     }
 
     // Comprueba si esta en un sitio desde el cual sabe llegar al escenario
     public bool ConozcoEsteSitio()
     {
+        if (lugarActual == blackBoard.celda)
+            return false;
+
         bool ret = false;
         int i = 0;
         while (!ret && i < lugaresConocidos.Count)
@@ -164,6 +174,11 @@ public class Cantante : MonoBehaviour
         List<GameObject> nuevosLugares = lugaresVisitados.Except(lugaresConocidos).ToList();
         lugaresConocidos.AddRange(nuevosLugares);
         lugaresVisitados.Clear();
+    }
+
+    public bool EstaEnEscenario()
+    {
+        return (lugarActual == Escenario);
     }
 
     //Mira si ve al vizconde con un angulo de vision y una distancia maxima

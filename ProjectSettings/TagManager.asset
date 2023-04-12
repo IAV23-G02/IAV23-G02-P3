@@ -11,6 +11,7 @@ TagManager:
   - Puerta
   - Cantante
   - Foco
+  - PiesCantante
   layers:
   - Default
   - TransparentFX
