@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            cantantePruebas.GetComponent<Cantante>().setCapturada(true);
+            cantantePruebas.GetComponent<Cantante>().SetCapturada(true);
         }
     }
 }

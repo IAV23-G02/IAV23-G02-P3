@@ -42,7 +42,7 @@ public class Cantante : MonoBehaviour
     public Transform Bambalinas;
 
     // La blackboard
-    public GameBlackboard bb;
+    public GameBlackboard blackBoard;
 
     //para seguir al fantasma o al vizconde
     public GameObject fantasma;
@@ -53,6 +53,11 @@ public class Cantante : MonoBehaviour
 
     [SerializeField]
     AudioSource audioSource;
+
+    [SerializeField]
+    List<GameObject> lugaresConocidos;
+
+    GameObject lugarActual;
 
     public void Awake()
     {
@@ -78,6 +83,21 @@ public class Cantante : MonoBehaviour
         }
     }
 
+    // Guarda la referencia a la habitación en la que está
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Cantante entra en " + collision.gameObject.name);
+        if (collision.gameObject.layer == LayerMask.NameToLayer("PointerLayer"))
+        {
+            Debug.Log("Cantante entra en " + collision.gameObject.name);
+            lugarActual = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("fuengirols");
+    }
     // Comienza a cantar, reseteando el temporizador
     public void Cantar()
     {
@@ -90,7 +110,7 @@ public class Cantante : MonoBehaviour
     public bool TerminaCantar()
     {
         // IMPLEMENTAR
-        nuevoObjetivo(Bambalinas.gameObject);
+        NuevoObjetivo(Bambalinas.gameObject);
         DejarDeCantar();
         return true;
     }
@@ -112,7 +132,7 @@ public class Cantante : MonoBehaviour
     public bool TerminaDescansar()
     {
         // IMPLEMENTAR
-        nuevoObjetivo(Escenario.gameObject);
+        NuevoObjetivo(Escenario.gameObject);
         return true;
     }
 
@@ -126,12 +146,16 @@ public class Cantante : MonoBehaviour
     // Comprueba si esta en un sitio desde el cual sabe llegar al escenario
     public bool ConozcoEsteSitio()
     {
-        
-        // IMPLEMENTAR
-        return true;
+        bool ret = false;
+        int i = 0;
+        while (!ret && i < lugaresConocidos.Count)
+        {
+            if (lugaresConocidos[i] == lugarActual) 
+                ret = true;
+            ++i;
+        }
+        return ret;
     }
-
-    
 
     //Mira si ve al vizconde con un angulo de vision y una distancia maxima
     public bool Scan()
@@ -208,23 +232,23 @@ public class Cantante : MonoBehaviour
         return capturada;
     }
 
-    public void setCapturada(bool cap)
+    public void SetCapturada(bool cap)
     {
         capturada= cap;
     }
 
-    public GameObject sigueFantasma()
+    public GameObject SigueFantasma()
     {
         // IMPLEMENTAR
         return null;
     }
 
-    public void sigueVizconde()
+    public void SigueVizconde()
     {
         agente.SetDestination(vizconde.transform.position);
     }
 
-    private void nuevoObjetivo(GameObject obj)
+    private void NuevoObjetivo(GameObject obj)
     {
         agente.SetDestination(obj.transform.position);
     }

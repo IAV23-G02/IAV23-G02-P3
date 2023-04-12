@@ -9180,7 +9180,12 @@ PrefabInstance:
     - target: {fileID: 2174625807257592081, guid: 93130e13cda0c4d4299c573677b7eecd,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174625807257592081, guid: 93130e13cda0c4d4299c573677b7eecd,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2174625807257592085, guid: 93130e13cda0c4d4299c573677b7eecd,
         type: 3}
@@ -17038,7 +17043,7 @@ Rigidbody:
   m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
@@ -17079,7 +17084,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -1.15, z: 0}
 --- !u!114 &373871681117018880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17135,10 +17140,11 @@ MonoBehaviour:
   cantando: 0
   Escenario: {fileID: 908012310}
   Bambalinas: {fileID: 553852559}
-  bb: {fileID: 0}
+  blackBoard: {fileID: 0}
   fantasma: {fileID: 0}
   vizconde: {fileID: 1908876747}
   audioSource: {fileID: 473146498}
+  lugaresConocidos: []
 --- !u!114 &2536986899609911508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17275,7 +17281,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
