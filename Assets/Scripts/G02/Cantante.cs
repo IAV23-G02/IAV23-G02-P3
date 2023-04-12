@@ -70,7 +70,6 @@ public class Cantante : MonoBehaviour
     {
         agente.updateRotation = false;
 
-        lugaresConocidos = new List<GameObject>();
         lugaresVisitados = new List<GameObject>();
     }
 
@@ -89,16 +88,16 @@ public class Cantante : MonoBehaviour
     }
 
     // Guarda la referencia a la habitación en la que está
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("PointerLayer")
-            && !lugaresVisitados.Contains(collision.gameObject) && !lugaresConocidos.Contains(collision.gameObject))
+        if (other.gameObject.layer == LayerMask.NameToLayer("PointerLayer")
+            && !lugaresVisitados.Contains(other.gameObject) && !lugaresConocidos.Contains(other.gameObject))
         {
-            Debug.Log("Cantante entra en " + collision.gameObject.name);
-            lugarActual = collision.gameObject;
+            Debug.Log("Cantante entra en " + other.gameObject.name + " (trigger)");
+            lugarActual = other.gameObject;
             lugaresVisitados.Add(lugarActual);
         }
-    }   
+    }
 
     // Comienza a cantar, reseteando el temporizador
     public void Cantar()
