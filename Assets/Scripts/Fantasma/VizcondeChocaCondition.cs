@@ -39,7 +39,7 @@ public class VizcondeChocaCondition : Conditional
     {
         // IMPLEMENTAR
         //Para que solo cuente un golpeo:
-        if((Vizconde.transform.position - transform.position).magnitude < 1.2)
+        if((Vizconde.transform.position - transform.position).magnitude < 1.8)
         {
             golpeado = true;
             return TaskStatus.Success;
