@@ -2800,6 +2800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escondite: {fileID: 1109291994}
   butaca: {fileID: 1957017323}
+  foco: {fileID: 692935215}
 --- !u!136 &258457289
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3969,6 +3970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escondite: {fileID: 29804945}
   butaca: {fileID: 1341835723}
+  foco: {fileID: 1762475701}
 --- !u!136 &406756856
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5480,6 +5482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escondite: {fileID: 637593796}
   butaca: {fileID: 1184022916}
+  foco: {fileID: 692935215}
 --- !u!136 &565968664
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6563,6 +6566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escondite: {fileID: 489659621}
   butaca: {fileID: 1322167764}
+  foco: {fileID: 1762475701}
 --- !u!136 &697826483
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7541,6 +7545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escondite: {fileID: 386149}
   butaca: {fileID: 1833399399}
+  foco: {fileID: 1762475701}
 --- !u!136 &825326284
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8292,6 +8297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escondite: {fileID: 6276498}
   butaca: {fileID: 379702782}
+  foco: {fileID: 692935215}
 --- !u!136 &976104761
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11689,6 +11695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escondite: {fileID: 2047312471}
   butaca: {fileID: 625845619}
+  foco: {fileID: 1762475701}
 --- !u!136 &1293266432
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16214,6 +16221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escondite: {fileID: 1812221560}
   butaca: {fileID: 75854005}
+  foco: {fileID: 692935215}
 --- !u!136 &2009794729
 CapsuleCollider:
   m_ObjectHideFlags: 0

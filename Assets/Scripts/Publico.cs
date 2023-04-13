@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 /*
  * Se encarga de controlar si el público debería huir o quedarse en el patio de butacas
@@ -18,6 +19,8 @@ public class Publico : MonoBehaviour
     GameObject luzAsociada;
     [SerializeField] GameObject escondite;
     [SerializeField] GameObject butaca;
+
+    [SerializeField] ControlPalanca foco;
     
     private void Start()
     {
@@ -25,6 +28,9 @@ public class Publico : MonoBehaviour
         sentado = true;
 
         GetComponent<NavMeshAgent>().SetDestination(butaca.transform.position);
+
+        foco.focoCaido.AddListener(apagaLuz);
+        foco.focoLevantado.AddListener(enciendeLuz);
     }
 
     public void LateUpdate()
@@ -50,9 +56,9 @@ public class Publico : MonoBehaviour
 
         GetComponent<NavMeshAgent>().SetDestination(escondite.transform.position);
 
-        //lucesEncendidas--;
-        //sentado = lucesEncendidas == 2;
+        
     }
+
     //se llama cuando el fantasma o el vizconde desactivan o activan las luces
     public void enciendeLuz()
     {
@@ -72,7 +78,7 @@ public class Publico : MonoBehaviour
     //        Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
     //        if(rb.velocity.y != 0)
     //        {
-    //            //Dejamos inconsciente al jugador
+    //            //Dejamos inconsciente al personaje
     //            gameObject.GetComponent<CapsuleCollider>().enabled = false;
     //            gameObject.GetComponent<NavMeshAgent>().enabled = false;
     //        }
