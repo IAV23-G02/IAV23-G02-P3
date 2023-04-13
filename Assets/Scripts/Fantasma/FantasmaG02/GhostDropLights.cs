@@ -42,7 +42,7 @@ public class GhostDropLights : Action
     private Vector3 selectPalanca()
     {
         //Si están las dos palancas activadas
-        if(!publicoWest && !publicoEast)
+        if (!publicoWest && !publicoEast)
         {
             //escogemos la palanca más cercana
             if ((palancaWest.transform.position - agent.transform.position).magnitude > (palancaEast.transform.position - agent.transform.position).magnitude)

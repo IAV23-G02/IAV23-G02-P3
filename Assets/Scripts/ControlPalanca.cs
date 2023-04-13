@@ -41,6 +41,7 @@ public class ControlPalanca : MonoBehaviour
 
     public void Interact()
     {
+     //   publico.GetComponent<Collider>().enabled = !caido && !otroControl.caido;
         if (caido)
         {
             candelabro.GetComponent<Rigidbody>().useGravity = true;

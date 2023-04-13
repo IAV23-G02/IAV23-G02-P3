@@ -54,6 +54,8 @@ public class Publico : MonoBehaviour
 
     public void apagaLuz()
     {
+        GetComponent<Collider>().enabled = false;
+
         miLuzEncendida = false;
         sentado = false;
 
@@ -66,10 +68,16 @@ public class Publico : MonoBehaviour
     //se llama cuando el fantasma o el vizconde desactivan o activan las luces
     public void enciendeLuz()
     {
+        GetComponent<Collider>().enabled = true;
+
         miLuzEncendida = true;
         sentado = true;
 
         GetComponent<NavMeshAgent>().SetDestination(butaca.transform.position);
+
+        if (grito.isPlaying)
+            grito.Stop();
+
         // lucesEncendidas++;
         //sentado = lucesEncendidas == 2;
     }
