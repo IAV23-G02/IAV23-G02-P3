@@ -27,12 +27,15 @@ public class VizcondeChocaCondition : Conditional
     CapsuleCollider cc;
     bool golpeado;
 
+    AudioSource bonkSound;
+
     public override void OnAwake()
     {
         // IMPLEMENTAR 
         agent = GetComponent<NavMeshAgent>();
         Vizconde = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().player;
         golpeado = false;
+        bonkSound = GetComponent<AudioSource>();
     }
 
     public override TaskStatus OnUpdate()
@@ -42,6 +45,10 @@ public class VizcondeChocaCondition : Conditional
         if((Vizconde.transform.position - transform.position).magnitude < 1.8)
         {
             golpeado = true;
+            if(bonkSound != null)
+            {
+                bonkSound.Play();
+            }
             return TaskStatus.Success;
         }
         golpeado = false;
