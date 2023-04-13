@@ -61,8 +61,8 @@ public class Publico : MonoBehaviour
 
         GetComponent<NavMeshAgent>().SetDestination(escondite.transform.position);
 
-        if (!grito.isPlaying)
-            grito.Play();
+        //if (!grito.isPlaying)
+        //    grito.Play();
     }
 
     //se llama cuando el fantasma o el vizconde desactivan o activan las luces

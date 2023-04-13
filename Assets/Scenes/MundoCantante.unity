@@ -10891,7 +10891,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a06e3e686d97ba14697c5b7495b87aa6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.932
   m_Pitch: 1
@@ -17553,7 +17553,8 @@ MonoBehaviour:
         Close Door Action","Instant":true}]},{"Type":"ImprisonSingerAction","NodeData":{"Offset":"(154.516235,161.825745)"},"ID":39,"Name":"Imprison
         Singer Action","Instant":true},{"Type":"GhostCloseDoorAction","NodeData":{"Offset":"(363.683716,155.263245)"},"ID":40,"Name":"Ghost
         Close Door Action","Instant":true}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(872.8154,223.592072)"},"ID":41,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GhostReturnAction","NodeData":{"Offset":"(-69.51074,135.338959)"},"ID":42,"Name":"Ghost
-        Return Action","Instant":true}]}]}}'
+        Return Action","Instant":true},{"Type":"GhostPlayPiano","NodeData":{"Offset":"(132.208313,151.444458)"},"ID":43,"Name":"Ghost
+        Play Piano","Instant":true}]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -17674,7 +17675,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b4b37d0bcd4b9b745a4424d84490d392, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

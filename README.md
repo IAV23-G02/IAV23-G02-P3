@@ -236,3 +236,4 @@ Los recursos de terceros utilizados son de uso público.
 - Game Maker's Toolkit: [¿Qué hace una buena IA?](https://www.youtube.com/watch?v=9bbhJi0NBkk)
 - Uso de [esta plataforma](https://app.diagrams.net/) para la realización de esquemas.
 - [Cómo detectar objetos a partir de un rango de visión](https://www.youtube.com/watch?v=lV47ED8h61k)
+- Sonido y música para la práctica sacados de este [enlace](https://pixabay.com/es/sound-effects)
