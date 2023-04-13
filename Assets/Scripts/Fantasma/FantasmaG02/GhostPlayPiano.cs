@@ -10,7 +10,6 @@ public class GhostPlayPiano : Action
     public override void OnAwake()
     {
         pianoSound= GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().piano.GetComponent<AudioSource>();
-        bonkSound = GetComponent<AudioSource>();
     }
 
     //Se llama al entrar al nodo
