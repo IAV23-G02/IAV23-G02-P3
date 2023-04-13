@@ -20,8 +20,11 @@ public class Publico : MonoBehaviour
     [SerializeField] GameObject escondite;
     [SerializeField] GameObject butaca;
 
-    [SerializeField] ControlPalanca foco;
+    [SerializeField] ControlPalanca foco; 
     
+    [SerializeField]
+    AudioSource grito;
+
     private void Start()
     {
         //lucesEncendidas = 2;
@@ -56,7 +59,8 @@ public class Publico : MonoBehaviour
 
         GetComponent<NavMeshAgent>().SetDestination(escondite.transform.position);
 
-        
+        if (!grito.isPlaying)
+            grito.Play();
     }
 
     //se llama cuando el fantasma o el vizconde desactivan o activan las luces

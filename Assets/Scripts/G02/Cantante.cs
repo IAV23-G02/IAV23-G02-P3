@@ -54,6 +54,8 @@ public class Cantante : MonoBehaviour
 
     [SerializeField]
     AudioSource audioSource;
+    [SerializeField]
+    AudioSource audioCapturada;
 
     [SerializeField]
     private List<GameObject> lugaresConocidos;
@@ -258,7 +260,9 @@ public class Cantante : MonoBehaviour
 
     public void SetCapturada(bool cap)
     {
-        capturada= cap;
+        capturada = cap;
+        if (capturada)
+            audioCapturada.Play();
     }
 
     public GameObject SigueFantasma()
