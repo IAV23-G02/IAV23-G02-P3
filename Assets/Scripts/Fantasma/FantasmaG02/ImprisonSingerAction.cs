@@ -19,6 +19,12 @@ public class ImprisonSingerAction : Action
         jailRoom = blackboard.celda;
         agent = GetComponent<NavMeshAgent>();
         singer = blackboard.singer;
+       
+    }
+
+    public override void OnStart()
+    {
+        onMyWay= false;
     }
 
     public override TaskStatus OnUpdate()
