@@ -36,7 +36,8 @@ public class GhostLlevarCantante : Action
 
     public override TaskStatus OnUpdate()
     {
-        agent.SetDestination(sotanoNorte.transform.position);
+        if (agent.enabled)
+            agent.SetDestination(sotanoNorte.transform.position);
 
         if (Vector3.SqrMagnitude(transform.position - sotanoNorte.transform.position) < 1.2f)
         {

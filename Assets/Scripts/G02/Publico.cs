@@ -27,7 +27,6 @@ public class Publico : MonoBehaviour
 
     private void Start()
     {
-        //lucesEncendidas = 2;
         sentado = true;
 
         GetComponent<NavMeshAgent>().SetDestination(butaca.transform.position);

@@ -18,7 +18,6 @@ public class GhostDropLights : Action
 
     public override void OnAwake()
     {
-        // IMPLEMENTAR
         blackboard = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>();
         agent = GetComponent<NavMeshAgent>();
         palancaEast = blackboard.eastLever.GetComponentInChildren<ControlPalanca>();
@@ -27,11 +26,13 @@ public class GhostDropLights : Action
 
     public override TaskStatus OnUpdate()
     {
-        //Hay que tener en cuenta también qué focos están activos
+        // Hay que tener en cuenta también qué focos están activos
         publicoEast = palancaEast.caido;
         publicoWest = palancaWest.caido;
-        // IMPLEMENTAR
-        agent.SetDestination(selectPalanca());
+
+        if (agent.enabled)
+            agent.SetDestination(selectPalanca());
+
         if(publicoWest && publicoEast)
             return TaskStatus.Success;
 

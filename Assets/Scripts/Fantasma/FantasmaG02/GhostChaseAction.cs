@@ -36,8 +36,9 @@ public class GhostChaseAction : Action
 
     public override TaskStatus OnUpdate()
     {
-        agent.SetDestination(singer.transform.position);
-        // IMPLEMENTAR
+        if (agent.enabled)
+            agent.SetDestination(singer.transform.position);
+
         if (Vector3.SqrMagnitude(transform.position - singer.transform.position) < 1.2f)
         {
             agent.SetDestination(transform.position);

@@ -114,7 +114,10 @@ public class Cantante : MonoBehaviour
     public bool TerminaCantar()
     {
         // IMPLEMENTAR
-        NuevoObjetivo(Bambalinas.gameObject);
+
+        if (agente.enabled) 
+            NuevoObjetivo(Bambalinas.gameObject);
+
         DejarDeCantar();
         return true;
     }
@@ -135,8 +138,8 @@ public class Cantante : MonoBehaviour
     // Comprueba si tiene que dejar de descansar
     public bool TerminaDescansar()
     {
-        // IMPLEMENTAR
-        NuevoObjetivo(Escenario.gameObject);
+        if (agente.enabled) 
+            NuevoObjetivo(Escenario.gameObject);
         return true;
     }
 

@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine.AI;
+using UnityEditor.Experimental.GraphView;
 
 /*
  * Accion de ir a la sala de musica, cuando llega devuelve Success
@@ -21,18 +22,22 @@ public class GhostReturnAction : Action
 {
     NavMeshAgent agent;
     GameObject musicRoom;
+    GameBlackboard blackboard;
 
     public override void OnAwake()
     {
-        // IMPLEMENTAR
-        musicRoom= GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().musicRoom;
+        blackboard = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>();
+        musicRoom = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().musicRoom;
         agent = GetComponent<NavMeshAgent>();
     }
 
     public override TaskStatus OnUpdate()
     {
-        // IMPLEMENTAR
-        agent.SetDestination(musicRoom.transform.position);
+        if (agent.enabled)
+        {
+            agent.SetDestination(musicRoom.transform.position);
+        }
+
         if (Vector3.SqrMagnitude(transform.position - musicRoom.transform.position) < 1.2f)
         {
             agent.SetDestination(transform.position);
