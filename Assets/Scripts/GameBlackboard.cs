@@ -54,7 +54,7 @@ public class GameBlackboard : MonoBehaviour
 
     private void Update()
     {
-        imprisoned = !singer.GetComponent<AudioSource>().isPlaying;
+        //imprisoned = !singer.GetComponent<AudioSource>().isPlaying;
     }
 
     // Permite al fantasma saber a qué palanca debería ir

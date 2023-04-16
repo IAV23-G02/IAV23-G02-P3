@@ -41,9 +41,8 @@ public class GhostSearchRandomAction : Action
         if (Vector3.SqrMagnitude(transform.position - randomSitio.transform.position) < 1.5f)
         {
             
-            agent.SetDestination(transform.position);
-            return TaskStatus.Success;
+            randomSitio = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().getRandomSitio();
         }
-        else return TaskStatus.Running;
+        return TaskStatus.Running;
     }
 }

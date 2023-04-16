@@ -36,12 +36,12 @@ public class GhostBehaviour : MonoBehaviour
         if (Vector3.Angle(playerVector.normalized, transform.forward) < anguloVistaHorizontal * 0.5
             && playerVector.magnitude < distanciaVista)
         {
+            singerNotSeenTimer = 0;
             cantanteVista = true;
             return true;
         }
         else
         {
-            singerNotSeenTimer = 0;
             cantanteVista = false;
             return false;
         }
