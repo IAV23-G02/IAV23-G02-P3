@@ -15,7 +15,7 @@ public class GhostPlayPiano : Action
     //Se llama al entrar al nodo
     public override void OnStart()
     {
-        if (pianoSound != null)
+        if (pianoSound != null && !pianoSound.isPlaying)
         {
             pianoSound.Play();
         }

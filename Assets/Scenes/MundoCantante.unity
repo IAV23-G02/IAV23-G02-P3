@@ -10879,7 +10879,7 @@ MonoBehaviour:
   numToques: 0
   maxToques: 3
   audioClips:
-  - {fileID: 8300000, guid: 8fe6d6ca5e814aa43b8ee8b6c7060a2a, type: 3}
+  - {fileID: 8300000, guid: 7db1d5f22abb16844944adfddb92b981, type: 3}
   - {fileID: 8300000, guid: b4b37d0bcd4b9b745a4424d84490d392, type: 3}
 --- !u!82 &1229224993
 AudioSource:
@@ -10891,9 +10891,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a06e3e686d97ba14697c5b7495b87aa6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7db1d5f22abb16844944adfddb92b981, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.932
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
