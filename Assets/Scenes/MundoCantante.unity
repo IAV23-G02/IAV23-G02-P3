@@ -13084,8 +13084,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Movimiento con el clic del rat\xF3n\nC\xE1maras 1, 2, 3 y 4\nQ para capturar
-    cantante\nE para usar palancas\nEspacio para golpear"
+  m_Text: "Movimiento con el clic del rat\xF3n\nC\xE1maras 1, 2, 3 y 4\nClick derecho
+    para usar palancas\nMiguel y Elisa"
 --- !u!222 &1430622084
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17546,8 +17546,8 @@ MonoBehaviour:
         Drop Lights","Instant":true,"BooleanpublicoWest":false,"BooleanpublicoEast":false}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(226.6665,139.999878)"},"ID":27,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GhostSearchStageAction","NodeData":{"Offset":"(-103.988068,153.961334)"},"ID":28,"Name":"Ghost
         Search Stage Action","Instant":true},{"Type":"GhostChaseAction","NodeData":{"Offset":"(155.946869,162.124863)"},"ID":29,"Name":"Ghost
         Chase Action","Instant":true}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(482.653839,160.000031)"},"ID":30,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"GhostRecentlySawSinger","NodeData":{"Offset":"(-160,120)"},"ID":31,"Name":"Ghost
-        Recently Saw Singer","Instant":true,"SingletiempoMaximo":15},{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(10,120)"},"ID":32,"Name":"Inverter","Instant":true,"Children":[{"Type":"ImprisonedCondition","NodeData":{"Offset":"(0.5516472,141.456863)"},"ID":33,"Name":"Imprisoned
-        Condition","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(130,130)"},"ID":34,"Name":"Inverter","Instant":true,"Children":[{"Type":"CapturadaCondition","NodeData":{"Offset":"(12.9845772,231.249878)"},"ID":35,"Name":"Capturada
+        Recently Saw Singer","Instant":true,"SingletiempoMaximo":15},{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(10,120)"},"ID":32,"Name":"Inverter","Instant":true,"Children":[{"Type":"GhostThinksImprisoned","NodeData":{"Offset":"(-9.239641,150.671143)"},"ID":33,"Name":"Ghost
+        Thinks Imprisoned","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(130,130)"},"ID":34,"Name":"Inverter","Instant":true,"Children":[{"Type":"CapturadaCondition","NodeData":{"Offset":"(12.9845772,231.249878)"},"ID":35,"Name":"Capturada
         Condition","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(430,140)"},"ID":36,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-76.23397,230.4845)"},"ID":37,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"GhostSeeSinger","NodeData":{"Offset":"(-52.13433,106.82251)"},"ID":38,"Name":"Ghost
         See Singer","Instant":true,"SingletiempoMaximo":0},{"Type":"GhostChaseAction","NodeData":{"Offset":"(101.616714,123.494385)"},"ID":39,"Name":"Ghost
         Chase Action","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(281.9599,221.475754)","Comment":"B\u00fasqueda

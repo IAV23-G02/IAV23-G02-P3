@@ -32,9 +32,11 @@ public class GhostBehaviour : MonoBehaviour
     private void Update()
     {
         singerNotSeenTimer += Time.deltaTime;
+
         //Si ha visto a la cantante fuera de la celda, cambiamos el booleano.
-        if(Scan() && !blackboard.imprisoned && !thinkSingerImprisoned) { 
-            thinkSingerImprisoned = false;
+        if(Scan()) {
+            if(!blackboard.imprisoned && thinkSingerImprisoned)
+                thinkSingerImprisoned = false;
         }
     }
 

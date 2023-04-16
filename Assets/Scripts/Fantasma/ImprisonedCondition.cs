@@ -19,17 +19,15 @@ using BehaviorDesigner.Runtime.Tasks;
 public class ImprisonedCondition : Conditional
 {
     GameBlackboard blackboard;
-    GhostBehaviour ghostBehaviour;
 
     public override void OnAwake()
     {
         blackboard = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>();
-        ghostBehaviour = GetComponent<GhostBehaviour>();
     }
 
     public override TaskStatus OnUpdate()
     {
-        if (ghostBehaviour.thinksSingerIsImprisoned())
+        if (blackboard.imprisoned)
             return TaskStatus.Success;
 
         return TaskStatus.Failure;
