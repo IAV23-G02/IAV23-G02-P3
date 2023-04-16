@@ -189,7 +189,6 @@ public class Cantante : MonoBehaviour
     //Mira si ve al vizconde con un angulo de vision y una distancia maxima
     public bool Scan()
     {
-        // IMPLEMENTAR
         Vector3 playerVector = vizconde.transform.position - transform.position;    
         if(Vector3.Angle(playerVector.normalized, transform.forward) < anguloVistaHorizontal * 0.5
             && playerVector.magnitude < distanciaVista)

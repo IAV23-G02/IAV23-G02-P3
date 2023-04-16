@@ -46,7 +46,7 @@ public class GhostChaseAction : Action
 
             //return TaskStatus.Success;
             singerNav.enabled = false;
-            singer.transform.position = transform.position + new Vector3(0, 1, 0);
+            singer.transform.position = transform.position + new Vector3(0, 1, 0) + transform.forward * 0.5f;
             singer.transform.SetParent(transform, true);
             //agent.SetDestination(sotanoNorte.transform.position);
 
