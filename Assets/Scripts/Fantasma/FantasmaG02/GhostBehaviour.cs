@@ -11,23 +11,31 @@ public class GhostBehaviour : MonoBehaviour
     public double distanciaVista;
 
     public Transform objetivo;
+    public GameBlackboard blackboard;
 
     //Temporizador que indica cuanto tiempo lleva el fantasma sin ver a la cantante
     private float singerNotSeenTimer;
 
     private bool cantanteVista;
+    private bool thinkSingerImprisoned;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         cantanteVista = false;
+        thinkSingerImprisoned = false;
         singerNotSeenTimer = 1000;
     }
 
     private void Update()
     {
         singerNotSeenTimer += Time.deltaTime;
-        Scan();
+        //Si ha visto a la cantante fuera de la celda, cambiamos el booleano.
+        if(Scan() && !blackboard.imprisoned && !thinkSingerImprisoned) { 
+            thinkSingerImprisoned = false;
+        }
     }
 
     public bool Scan()
@@ -79,7 +87,17 @@ public class GhostBehaviour : MonoBehaviour
         return singerNotSeenTimer;
     }
 
-    public bool  ISeeTheTarget() {
+    public bool ISeeTheTarget() {
         return cantanteVista;
+    }
+
+    public bool thinksSingerIsImprisoned()
+    {
+        return thinkSingerImprisoned;
+    }
+
+    public void setGhostThinksSingerIsImprisoned(bool b)
+    {
+        thinkSingerImprisoned = b;
     }
 }

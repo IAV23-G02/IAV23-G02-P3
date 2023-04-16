@@ -21,8 +21,12 @@ public class GhostPlayPiano : Action
         }
     }
 
-    //Se llama cuando la tarea es interrumpida por un conditional abort
-    public override void OnConditionalAbort()
+    public override TaskStatus OnUpdate()
+    {
+        return TaskStatus.Running;
+    }
+
+    public override void OnEnd()
     {
         if (pianoSound != null && pianoSound.isPlaying) 
         {

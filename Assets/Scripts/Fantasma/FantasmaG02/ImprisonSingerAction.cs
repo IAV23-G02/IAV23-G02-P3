@@ -50,6 +50,8 @@ public class ImprisonSingerAction : Action
 
             singer.GetComponent<Cantante>().SetLugarActual(blackboard.celda);
 
+            this.GetComponent<GhostBehaviour>().setGhostThinksSingerIsImprisoned(true);
+
             return TaskStatus.Success;
         }
 

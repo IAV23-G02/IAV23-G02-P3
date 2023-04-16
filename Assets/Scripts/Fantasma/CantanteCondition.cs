@@ -31,7 +31,10 @@ public class CantanteCondition : Conditional
     public override TaskStatus OnUpdate()
     {
         if (cantante.cantando)
+        {
+            this.GetComponent<GhostBehaviour>().setGhostThinksSingerIsImprisoned(false);
             return TaskStatus.Success;
+        }
 
         return TaskStatus.Failure;
     }

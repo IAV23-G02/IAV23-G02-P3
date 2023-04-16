@@ -39,7 +39,7 @@ public class GhostLlevarCantante : Action
         if (agent.enabled)
             agent.SetDestination(sotanoNorte.transform.position);
 
-        if (Vector3.SqrMagnitude(transform.position - sotanoNorte.transform.position) < 1.2f)
+        if (Vector3.SqrMagnitude(transform.position - sotanoNorte.transform.position) < 8f)
         {
             agent.SetDestination(transform.position);
 

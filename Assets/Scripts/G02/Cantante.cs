@@ -283,4 +283,8 @@ public class Cantante : MonoBehaviour
         agente.SetDestination(obj.transform.position);
     }
 
+    public void LiberaCantante()
+    {
+        blackBoard.imprisoned = false;
+    }
 }
