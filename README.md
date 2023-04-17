@@ -5,7 +5,7 @@
 - [Miguel González Pérez](https://github.com/miggon23)
 
 ## Banco de pruebas de la práctica
-Podrán verse las pruebas realizadas para la práctica en un vídeo de YouTube de cara a la entrega final.
+Podrán verse las pruebas realizadas para la práctica en el siguiente [enlace](https://youtu.be/dn6vOx8MhaQ).
 
 ## Correcciones de la documentación
 Tras la primera corrección, se han añadido los siguientes apartados a la documentación:
