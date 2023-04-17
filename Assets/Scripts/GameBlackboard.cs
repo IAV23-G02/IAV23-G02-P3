@@ -29,6 +29,7 @@ public class GameBlackboard : MonoBehaviour
 
     public GameObject singer;
     public GameObject player;
+    public GameObject fantasma;
 
     public GameObject westLever;
     public GameObject eastLever;

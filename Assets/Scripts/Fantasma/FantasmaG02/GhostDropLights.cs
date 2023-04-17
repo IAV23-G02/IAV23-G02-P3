@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine.AI;
-using UnityEditor.Experimental.GraphView;
 
 public class GhostDropLights : Action
 {

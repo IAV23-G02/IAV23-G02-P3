@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 /*
  * Se encarga de controlar si el público debería huir o quedarse en el patio de butacas
@@ -25,6 +26,8 @@ public class Publico : MonoBehaviour
     [SerializeField]
     AudioSource grito;
 
+    NavMeshAgent fantasma;
+
     private void Start()
     {
         sentado = true;
@@ -33,6 +36,11 @@ public class Publico : MonoBehaviour
 
         foco.focoCaido.AddListener(apagaLuz);
         foco.focoLevantado.AddListener(enciendeLuz);
+        fantasma = GameObject.FindGameObjectWithTag("Blackboard").GetComponent<GameBlackboard>().fantasma.GetComponent<NavMeshAgent>();
+        //No funciona
+        //float coste = fantasma.GetAreaCost(3);
+        //fantasma.SetAreaCost(3, coste + 10);
+           
     }
 
     public void LateUpdate()
@@ -60,8 +68,12 @@ public class Publico : MonoBehaviour
 
         GetComponent<NavMeshAgent>().SetDestination(escondite.transform.position);
 
-        //if (!grito.isPlaying)
-        //    grito.Play();
+        //No funciona
+        //float coste = fantasma.GetAreaCost(3);
+        //fantasma.SetAreaCost(3, coste - 10);
+
+        if (!grito.isPlaying)
+            grito.Play();
     }
 
     //se llama cuando el fantasma o el vizconde desactivan o activan las luces
@@ -76,6 +88,10 @@ public class Publico : MonoBehaviour
 
         if (grito.isPlaying)
             grito.Stop();
+
+        //No funciona
+        //float coste = fantasma.GetAreaCost(3);
+        //fantasma.SetAreaCost(3, coste + 10);
 
         // lucesEncendidas++;
         //sentado = lucesEncendidas == 2;
