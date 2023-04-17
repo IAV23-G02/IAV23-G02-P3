@@ -10,10 +10,10 @@ Podrán verse las pruebas realizadas para la práctica en un vídeo de YouTube d
 ## Correcciones de la documentación
 Tras la primera corrección, se han añadido los siguientes apartados a la documentación:
 - Añadidos los enlaces a los nombres de los alumnos.
-- 
 
 Tras la segunda corrección, se han hecho los siguientes cambios:
-
+- Corregidos los eventos de palanca (usando el patrón Listener) como mejora de código
+- Cambios en el BT del fantasma. Ver la implementación del BT en Unity, donde hay comentarios que sirven de guía.
 
 ## Propuesta
 
